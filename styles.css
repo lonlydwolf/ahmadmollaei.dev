@@ -40,7 +40,6 @@ html {
   scroll-padding-top: var(--navbar-height);
 }
 
-
 body {
   font-family: var(--font-sans);
   background-color: var(--ctp-base);
@@ -50,8 +49,6 @@ body {
 main {
   padding-top: var(--navbar-height);
 }
-
-
 
 /* Header*/
 /* NavBar*/
@@ -68,7 +65,7 @@ main {
 }
 
 .site-navbar .navbar-toggler {
-  border-color: var(--ctp-surface0)
+  border-color: var(--ctp-surface0);
 }
 
 .site-navbar .navbar-toggler-icon {
@@ -103,7 +100,7 @@ html[data-theme="light"] .site-navbar .navbar-toggler-icon {
 }
 
 @media (max-width: 991px) {
-  .btn-resume {
+  .site-navbar .btn-resume {
     border: none;
     color: var(--ctp-mauve);
     padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
@@ -112,7 +109,7 @@ html[data-theme="light"] .site-navbar .navbar-toggler-icon {
     background: transparent;
   }
 
-  .btn-resume:hover {
+  .site-navbar .btn-resume:hover {
     background-color: transparent;
     text-decoration: underline;
     color: var(--ctp-mauve);
@@ -197,7 +194,9 @@ html[data-theme="light"] #icon-moon {
 
 .social-list a {
   color: var(--ctp-subtext0);
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
   display: block;
 }
 
@@ -224,7 +223,9 @@ html[data-theme="light"] #icon-moon {
   color: var(--ctp-subtext0);
   letter-spacing: 0.1em;
 
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .email-wrapper a:hover {
@@ -269,7 +270,6 @@ html[data-theme="light"] #icon-moon {
   }
 }
 
-
 /* HOME PAGE */
 
 /* Hero Section */
@@ -289,7 +289,6 @@ html[data-theme="light"] #icon-moon {
 .hero-bio {
   color: var(--ctp-subtext0);
 }
-
 
 /* ABOUT PAGE */
 
@@ -395,7 +394,6 @@ html[data-theme="light"] #icon-moon {
   color: var(--ctp-mauve);
 }
 
-
 /* EXPERIENCE PAGE */
 
 .exp-heading {
@@ -480,7 +478,9 @@ html[data-theme="light"] #icon-moon {
   background-color: transparent;
   border: 1px solid var(--ctp-surface0);
   color: var(--ctp-subtext0);
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .proj-badge:hover {
@@ -492,7 +492,9 @@ html[data-theme="light"] #icon-moon {
   background-color: var(--ctp-mantle);
   border: 1px solid var(--ctp-surface0);
   border-radius: 8px;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .proj-card:hover {
@@ -526,7 +528,9 @@ html[data-theme="light"] #icon-moon {
 
 .proj-link {
   color: var(--ctp-subtext0);
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
   display: block;
 }
 
@@ -585,7 +589,6 @@ html[data-theme="light"] #icon-moon {
   text-decoration: none;
 }
 
-
 /* FOOTER */
 
 .site-footer {
@@ -601,7 +604,9 @@ html[data-theme="light"] #icon-moon {
 
 .footer-social-link {
   color: var(--ctp-subtext0);
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
   display: block;
 }
 
@@ -614,7 +619,6 @@ html[data-theme="light"] #icon-moon {
   color: var(--ctp-subtext0);
   font-size: 0.75rem;
 }
-
 
 /* MODAL */
 

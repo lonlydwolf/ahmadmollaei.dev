@@ -274,6 +274,11 @@ html[data-theme="light"] #icon-moon {
 
 /* Hero Section */
 
+.hero-section {
+  min-height: calc(100vh - var(--navbar-height));
+  min-height: calc(100svh - var(--navbar-height));
+}
+
 .hero-greeting {
   color: var(--ctp-mauve);
 }

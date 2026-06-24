@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="dark">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <!--Google Fonts: JetBrains Mono & Inter -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+            rel="stylesheet">
+        <!--Bootstrap CSS-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <!--Bootstrap JS-->
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+        <!--Custom CSS-->
+        <link href="styles.css" rel="stylesheet">
+        <!--Custom JS-->
+        <script defer src="scripts.js"></script>
+        <!--Website Title & Logo-->
+        <title>Ahmad Mollaei</title>
+        <link rel="icon" type="image/png" href="assets/logo_tab.png">
+
+    </head>
+
+    <body class="d-flex flex-column min-vh-100 m-0">
+
+
+
+
+        <!--Header-->
+        <header>
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-lg fixed-top site-navbar">
+                <div class="container">
+                    <!--Logo-->
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <img src="assets/logo.png" alt="Logo" class="navbar-logo me-2" id="nav-logo">
+                        <span class="font-monospace fw-bold h6 mb-0">Ahmad Mollaei</span>
+                    </a>
+
+                    <div class="d-flex align-items-center gap-2 ms-auto ms-lg-2 order-lg-last">
+                        <!-- Theme Toggle -->
+                        <button id="theme-toggle" class="btn-theme-toggle" aria-label="Toggle theme">
+                            <!-- Sun visable in dark mode - click to go light -->
+                            <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                width="18" height="18">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                            <!-- Moon: visable in light mode - click to go dark -->
+                            <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                width="18" height="18">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+
+                        </button>
+
+                        <!--Navbar Toggler-->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+
+                    <!--Pages List-->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <!--About-->
+                            <li class="nav-item me-2">
+                                <a class="nav-link" href="about.html">About</a>
+                            </li>
+                            <!--Experience-->
+                            <li class="nav-item me-2">
+                                <a class="nav-link" href="experience.html">Experience</a>
+                            </li>
+                            <!--Projects-->
+                            <li class="nav-item me-2">
+                                <a class="nav-link" href="projects.html">Projects</a>
+                            </li>
+                            <!--CV-->
+                            <li class="nav-item ms-lg-2">
+                                <button type="button" class="btn btn-resume font-monospace" data-bs-toggle="modal"
+                                    data-bs-target="#resumeModal">Resume</button>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
+        <!--Fixed SideBars-->
+        <!--Left SideBar-->
+        <div class="sidebar sidebar-left">
+            <ul class="social-list">
+                <!--GitHub-->
+                <li>
+                    <a href="https://github.com/lonlydwolf" target="_blank" rel="noreferrer" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <title>GitHub</title>
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+                <!--Instagram-->
+                <li>
+                    <a href="https://www.instagram.com/ahmad_gangester/" target="_blank" rel="noreferrer"
+                        aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <title>Instagram</title>
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </li>
+                <!--Linkedin-->
+                <li>
+                    <a href="https://www.linkedin.com/in/ahmad-mollaei-24b5829a/" target="_blank" rel="noreferrer"
+                        aria-label="Linkedin">
+                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <title>LinkedIn</title>
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!--Right SideBar-->
+        <div class="sidebar sidebar-right">
+            <div class="email-wrapper">
+                <a href="mailto:contact@ahmadmollaei.dev">contact@ahmadmollaei.dev</a>
+            </div>
+        </div>
+
+
+
+
+        <!--Main-->
+        <main class="flex-grow-1">
+            <!--Hero Section-->
+            <section class="container min-vh-100 d-flex flex-column justify-content-center align-items-start">
+                <h1 class="h6 font-monospace mb-3 hero-greeting">Hi, my name is</h1>
+                <h2 class="display-1 fw-bold mb-2 hero-name">Ahmad Mollaei.</h2>
+                <h3 class="display-2 fw-bold mb-4 hero-tagline">I build tools I wish existed.</h3>
+                <p class="lead mb-5 hero-bio" style="max-width: 540px;">I'm a CS graduate who fell in love with
+                    programming in
+                    high school and took a
+                    long winding road back to it — through freight startups, automotive diagnostics, and everything in
+                    between. Today I
+                    build developer tools, open-source projects, and AI systems with a focus on two causes that are
+                    deeply personal to me:
+                    education and diabetes care.</p>
+                <a class="btn btn-resume btn-lg font-monospace px-4 py-3" href="about.html">More About Me</a>
+            </section>
+        </main>
+
+
+
+        <!--Footer-->
+        <footer class="site-footer py-4">
+            <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+                <!--CopyRight & Name-->
+                <span class="font-monospace footer-brand">© 2026 Ahmad Mollaei</span>
+
+                <!--Social Icons-->
+                <ul class="footer-social-list list-unstyled d-flex align-items-center gap-4 mb-0">
+                    <!--GitHub-->
+                    <li>
+                        <a href="https://github.com/lonlydwolf" target="_blank" rel="noreferrer" aria-label="GitHub"
+                            class="footer-social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                width="20" height="20">
+                                <title>GitHub</title>
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+                    <!--Linkedin-->
+                    <li>
+                        <a href="https://www.linkedin.com/in/ahmad-mollaei-24b5829a/" target="_blank" rel="noreferrer"
+                            aria-label="Linkedin" class="footer-social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                width="20" height="20">
+                                <title>LinkedIn</title>
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </li>
+                    <!--Email-->
+                    <li>
+                        <a href="mailto:contact@ahmadmollaei.dev" aria-label="Email" class="footer-social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                width="20" height="20">
+                                <title>Email</title>
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Credit -->
+                <span class="font-monospace footer-credit">Designed & built by Ahmad Mollaei</span>
+            </div>
+        </footer>
+
+
+
+
+        <!-- Resume Download Popup (Modal)-->
+        <div class="modal fade" id="resumeModal" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="resumeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content border-secondary border-opacity-25">
+
+                    <!-- Modal Header-->
+                    <div class="modal-header border-bottom border-secondary border-opacity-10">
+                        <h4 class="modal-title font-monospace h6 text-uppercase" id="resumeModalLabel">
+                            Download CV</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <!-- Modal Body-->
+                    <div class="modal-body text-muted small py-4">
+                        Would you like to download a copy of my technical CV in PDF format?
+                    </div>
+
+                    <!--Modal Footer with Action Buttons -->
+                    <div
+                        class="modal-footer border-top border-secondary border-opacity-10 justify-content-end gap-2 p-3">
+                        <button type="button"
+                            class="btn btn-sm btn-link text-muted text-decoration-none font-monospace small"
+                            data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+                        <a href="assets/pdf/cv.pdf" download="Ahmad_Mollaei_CV.pdf"
+                            class="btn btn-sm btn-resume font-monospace px-3 py-2">
+                            Download PDF
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </body>
+
+</html>

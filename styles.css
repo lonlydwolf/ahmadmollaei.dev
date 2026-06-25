@@ -297,7 +297,7 @@ html[data-theme="light"] #icon-moon {
 
 .email-wrapper a:hover {
   color: var(--ctp-mauve);
-  transform: TranslateX(3px);
+  transform: translateX(3px);
 }
 
 .social-list::after,

@@ -335,6 +335,13 @@ html[data-theme="light"] #icon-moon {
   min-height: calc(100svh - var(--navbar-height));
 }
 
+@media (max-height: 550px) {
+  .hero-section {
+    padding-top: var(--navbar-height);
+    padding-bottom: 24px;
+  }
+}
+
 .hero-greeting {
   color: var(--ctp-mauve);
 }

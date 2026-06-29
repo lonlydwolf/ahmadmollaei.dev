@@ -27,18 +27,38 @@ function toggleTheme() {
 
 // Check Theme when loading page. if no Key Default DARK.
 const savedTheme = localStorage.getItem(STORAGE_KEY) || DARK;
-applyTheme(savedTheme);
+document.documentElement.setAttribute("data-theme", savedTheme);
 
-// LISTENER
-const themeToggleBtn = document.getElementById("theme-toggle");
-if (themeToggleBtn) {
-  themeToggleBtn.addEventListener("click", toggleTheme);
+// --- Shared Components ---
+
+async function loadChrome() {
+  const [nav, sidebars, bottom] = await Promise.all([
+    fetch("/_includes/_nav.html").then((r) => r.text()),
+    fetch("/_includes/_sidebars.html").then((r) => r.text()),
+    fetch("/_includes/_footer-modal.html").then((r) => r.text()),
+  ]);
+
+  document.getElementById("site-header").innerHTML = nav;
+  document.getElementById("site-sidebars").innerHTML = sidebars;
+  document.getElementById("site-chrome-bottom").innerHTML = bottom;
+
+  // Wire Theme Toggle (just been added to the DOM)
+  document
+    .getElementById("theme-toggle")
+    .addEventListener("click", toggleTheme);
+
+  // Swap logo to match saved theme
+  applyTheme(savedTheme);
+
+  // Mark the active nav link based on current page
+  document
+    .querySelector(`.nav-link[href="${location.pathname}"]`)
+    ?.classList.add("active");
+
+  // Bootstarp tooltip
+  document
+    .querySelectorAll('[data-bs-toggle="tooltip"]')
+    .forEach((el) => new bootstrap.Tooltip(el));
 }
 
-// --- Bootstrap Tooltips ----------
-const tooltipTriggerList = document.querySelectorAll(
-  '[data-bs-toggle="tooltip"]',
-);
-const tooltipList = [...tooltipTriggerList].map(
-  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl),
-);
+document.addEventListener("DOMContentLoaded", loadChrome);

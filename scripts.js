@@ -3,7 +3,7 @@
 const html = document.documentElement;
 const STORAGE_KEY = "theme";
 const DARK = "dark";
-const LIGHT = "light"
+const LIGHT = "light";
 
 function applyTheme(theme) {
   // Set data-theme on <html>
@@ -15,7 +15,8 @@ function applyTheme(theme) {
   // Swap navbar logo
   const navLogo = document.getElementById("nav-logo");
   if (navLogo) {
-    navLogo.src = theme === DARK ? "assets/logo.png" : "assets/logo-light.png";
+    navLogo.src =
+      theme === DARK ? "/assets/logo.png" : "/assets/logo-light.png";
   }
 }
 
@@ -28,16 +29,16 @@ function toggleTheme() {
 const savedTheme = localStorage.getItem(STORAGE_KEY) || DARK;
 applyTheme(savedTheme);
 
-
 // LISTENER
 const themeToggleBtn = document.getElementById("theme-toggle");
 if (themeToggleBtn) {
   themeToggleBtn.addEventListener("click", toggleTheme);
 }
 
-
 // --- Bootstrap Tooltips ----------
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-
-
+const tooltipTriggerList = document.querySelectorAll(
+  '[data-bs-toggle="tooltip"]',
+);
+const tooltipList = [...tooltipTriggerList].map(
+  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl),
+);

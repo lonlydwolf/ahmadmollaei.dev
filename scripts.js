@@ -16,7 +16,9 @@ function applyTheme(theme) {
   const navLogo = document.getElementById("nav-logo");
   if (navLogo) {
     navLogo.src =
-      theme === DARK ? "/assets/logo.png" : "/assets/logo-light.png";
+      theme === DARK
+        ? "/assets/images/logo.png"
+        : "/assets/images/logo-light.png";
   }
 }
 

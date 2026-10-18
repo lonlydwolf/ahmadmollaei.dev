@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Ahmad Mollaei</title><desc id="desc">I build tools I wish existed. Software engineering, backend and systems, applied AI.</desc>
+<rect width="1200" height="630" fill="#1e1e2e"/>
+<path d="M72 460H1128" stroke="#313244" stroke-width="2"/>
+<text x="72" y="125" fill="#cba6f7" font-family="Helvetica, Arial, sans-serif" font-size="26">ahmadmollaei.dev</text>
+<text x="68" y="266" fill="#cdd6f4" font-family="Helvetica, Arial, sans-serif" font-weight="bold" font-size="82" letter-spacing="-3">Ahmad Mollaei.</text>
+<text x="72" y="350" fill="#a6adc8" font-family="Helvetica, Arial, sans-serif" font-size="43">I build tools I wish existed.</text>
+<text x="72" y="523" fill="#cdd6f4" font-family="Helvetica, Arial, sans-serif" font-size="25">Software engineering</text>
+<text x="430" y="523" fill="#a6adc8" font-family="Helvetica, Arial, sans-serif" font-size="25">Backend &amp; systems</text>
+<text x="850" y="523" fill="#a6adc8" font-family="Helvetica, Arial, sans-serif" font-size="25">Applied AI</text>
+</svg>

@@ -5,21 +5,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <link rel="canonical" href="https://ahmadmollaei.dev/" />
+
     <meta
       name="description"
-      content="Ahmad Mollaei - software engineer building developer tools and AI systems focused on education and diabetes care."
+      content="Product-minded software engineering, backend and systems foundations, and learning projects by Ahmad Mollaei."
     />
-
-    <meta property="og:title" content="Ahmad Mollaei" />
+    <meta property="og:title" content="Ahmad Mollaei | Software engineering" />
     <meta
       property="og:description"
-      content="Software engineer building developer tools and AI systems."
+      content="Product-minded software engineering, backend and systems foundations, and learning projects by Ahmad Mollaei."
     />
     <meta property="og:url" content="https://ahmadmollaei.dev/" />
     <meta property="og:type" content="website" />
-
-    <link rel="canonical" href="https://ahmadmollaei.dev/" />
-
+    <meta
+      property="og:image"
+      content="https://ahmadmollaei.dev/assets/images/social-preview.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Ahmad Mollaei — I build tools I wish existed. Software engineering, backend and systems, applied AI."
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <!--Google Fonts: JetBrains Mono & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,55 +43,143 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <!--Bootstrap JS-->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
     <!--Custom CSS-->
     <link href="/styles.css" rel="stylesheet" />
     <!--Custom JS-->
     <script defer src="/scripts.js"></script>
     <!--Website Title & Logo-->
-    <title>Ahmad Mollaei</title>
+    <title>Ahmad Mollaei | Software engineering</title>
     <link rel="icon" type="image/png" href="/assets/images/logo_tab.png" />
   </head>
 
   <body class="d-flex flex-column min-vh-100 m-0">
     <!--Header-->
-    <header id="site-header"></header>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header id="site-header">
+      <nav class="fallback-nav container" aria-label="Main navigation">
+        <a href="/" aria-current="page">Home</a><a href="/projects/">Projects</a
+        ><a href="/about/">About</a><a href="/experience/">Experience</a
+        ><a href="/assets/pdf/cv.pdf">View CV</a>
+      </nav>
+    </header>
 
     <!--Fixed SideBars-->
     <div id="site-sidebars"></div>
 
     <!--Main-->
-    <main class="flex-grow-1">
-      <!--Hero Section-->
-      <section
-        class="hero-section container d-flex flex-column justify-content-center align-items-start"
-      >
-        <h1 class="h6 font-monospace mb-3 hero-greeting">Hi, my name is</h1>
-        <h2 class="display-1 fw-bold mb-2 hero-name">Ahmad Mollaei.</h2>
-        <h3 class="display-2 fw-bold mb-4 hero-tagline">
-          I build tools I wish existed.
-        </h3>
-        <p class="lead mb-5 hero-bio" style="max-width: 540px">
-          I'm a CS graduate who fell in love with programming in high school and
-          took a long winding road back to it — through freight startups,
-          automotive diagnostics, and everything in between. Today I build
-          developer tools, open-source projects, and AI systems with a focus on
-          two causes that are deeply personal to me: education and diabetes
-          care.
+    <main id="main-content" tabindex="-1" class="flex-grow-1">
+      <section class="container home-intro">
+        <p class="hero-greeting">Hi, I’m</p>
+        <h1 class="hero-name">Ahmad Mollaei.</h1>
+        <p class="home-tagline">I build tools I wish existed.</p>
+        <div class="home-summary">
+          <p>
+            My focus is <strong>product-minded software engineering</strong>:
+            building useful tools while deepening my backend and systems
+            foundations, with a long-term direction in applied AI.
+          </p>
+          <p class="home-context">
+            CS graduate. Experience in freight, logistics, and automotive
+            diagnostics. Based in Kuwait.
+          </p>
+        </div>
+        <div class="page-actions">
+          <a class="btn btn-resume" href="/projects/">View my work</a
+          ><a href="/assets/pdf/cv.pdf">View CV</a
+          ><a href="mailto:contact@ahmadmollaei.dev">Get in touch</a>
+        </div>
+        <p class="availability">
+          Open to software engineering roles, especially backend-focused work.
         </p>
-        <a class="btn btn-resume btn-lg font-monospace px-4 py-3" href="about/"
-          >More About Me</a
+      </section>
+      <div class="container home-current">
+        <section
+          class="faculty-feature"
+          aria-labelledby="faculty-title"
+          id="faculty"
         >
+          <div class="feature-intro">
+            <div>
+              <span class="status status-current"
+                >Current · Personal-use beta</span
+              >
+              <h2 id="faculty-title">Faculty</h2>
+            </div>
+            <p>From a tutoring app to a learning workflow I actually use.</p>
+          </div>
+          <p class="feature-description">
+            Seven AI skills with separate roles for planning, teaching,
+            assessment, research, and build review. I use Faculty for my
+            coursework; the course folder keeps the plan and learning records
+            between sessions.
+          </p>
+          <figure class="faculty-workflow" aria-labelledby="workflow-title">
+            <figcaption id="workflow-title">
+              A course that continues across sessions
+            </figcaption>
+            <div class="faculty-roles">
+              <div>
+                <span class="role-action">Plan</span><strong>Advisor</strong
+                ><span>Goals &amp; course units</span>
+              </div>
+              <div>
+                <span class="role-action">Practice</span><strong>Teacher</strong
+                ><span>Lessons &amp; assignments</span>
+              </div>
+              <div>
+                <span class="role-action">Assess</span><strong>Tutor</strong
+                ><span>Understanding &amp; gaps</span>
+              </div>
+              <div>
+                <span class="role-action">Review</span><strong>Editor</strong
+                ><span>Builds &amp; revisions</span>
+              </div>
+            </div>
+            <div class="course-record">
+              <strong>Shared course records</strong
+              ><span>Plan · notes · assignments · results · next action</span>
+            </div>
+            <p class="workflow-support">
+              Setup, research, and exploration support the course. I select
+              roles at each handoff, with more practice or revision when needed.
+            </p>
+          </figure>
+          <div class="feature-bottom">
+            <p>
+              Built from lessons in GeminiSensei. A personal workflow in
+              development, with checks and limitations documented.
+            </p>
+            <div class="project-links">
+              <a
+                href="https://github.com/lonlydwolf/skills/tree/main/skills/faculty"
+                >Explore Faculty</a
+              ><a
+                href="https://github.com/lonlydwolf/skills/blob/main/skills/faculty/docs/CHECKS.md"
+                >Checks &amp; limitations</a
+              >
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="container home-more">
+        <h2>The experiments behind the work</h2>
+        <p>
+          Desktop applications, developer tools, and neural networks. Completed
+          learning projects, with code and honest retrospectives.
+        </p>
+        <a href="/projects/#learning-projects">Browse the learning projects</a>
       </section>
     </main>
 
     <!--Footer-->
-    <div id="site-chrome-bottom"></div>
+    <div id="site-chrome-bottom">
+      <footer class="site-footer py-4">
+        <div class="container fallback-footer">
+          <span>Ahmad Mollaei</span
+          ><a href="mailto:contact@ahmadmollaei.dev">Get in touch</a
+          ><a href="/assets/pdf/cv.pdf" download>Download CV</a>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

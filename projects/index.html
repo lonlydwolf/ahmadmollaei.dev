@@ -5,21 +5,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <link rel="canonical" href="https://ahmadmollaei.dev/projects/" />
+
     <meta
       name="description"
-      content="Ahmad Mollaei - software engineer building developer tools and AI systems focused on education and diabetes care."
+      content="Faculty, a personal AI learning workflow, and archived software experiments with code and technical retrospectives."
     />
-
-    <meta property="og:title" content="Ahmad Mollaei" />
+    <meta property="og:title" content="Projects | Ahmad Mollaei" />
     <meta
       property="og:description"
-      content="Software engineer building developer tools and AI systems."
+      content="Faculty, a personal AI learning workflow, and archived software experiments with code and technical retrospectives."
     />
     <meta property="og:url" content="https://ahmadmollaei.dev/projects/" />
     <meta property="og:type" content="website" />
-
-    <link rel="canonical" href="https://ahmadmollaei.dev/projects/" />
-
+    <meta
+      property="og:image"
+      content="https://ahmadmollaei.dev/assets/images/social-preview.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Ahmad Mollaei — I build tools I wish existed. Software engineering, backend and systems, applied AI."
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <!--Google Fonts: JetBrains Mono & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,13 +43,6 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <!--Bootstrap JS-->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
     <!--Custom CSS-->
     <link href="/styles.css" rel="stylesheet" />
     <!--Custom JS-->
@@ -52,323 +54,268 @@
 
   <body class="d-flex flex-column min-vh-100 m-0">
     <!--Header-->
-    <header id="site-header"></header>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header id="site-header">
+      <nav class="fallback-nav container" aria-label="Main navigation">
+        <a href="/">Home</a><a href="/projects/" aria-current="page">Projects</a
+        ><a href="/about/">About</a><a href="/experience/">Experience</a
+        ><a href="/assets/pdf/cv.pdf">View CV</a>
+      </nav>
+    </header>
 
     <!--Fixed SideBars-->
     <div id="site-sidebars"></div>
 
     <!--Main-->
-    <main class="flex-grow-1">
-      <section class="container pt-5 pb-3 py-md-5">
-        <!-- Header -->
-        <div class="mb-5">
-          <h1 class="visually-hidden">Projects</h1>
-          <h2 class="display-5 fw-bold mb-2 proj-heading">
-            <span class="about-section-num">03.</span>Projects
-          </h2>
-          <p class="text-muted font-monospace small">
-            An archive of what I've built to master new engineering domains.
+    <main id="main-content" tabindex="-1" class="flex-grow-1">
+      <section class="container page-section">
+        <header class="page-heading">
+          <h1>Projects</h1>
+          <p>
+            What I’m using now, and what I learned from the experiments that
+            came before it.
           </p>
-        </div>
-
-        <!-- Educational & First-Principels Projects-->
-        <div class="row g-4">
-          <!-- GeminiSensei -->
-          <div class="col-md-6">
-            <div class="card h-100 proj-card p-4">
-              <div class="card-body d-flex flex-column p-0">
-                <div
-                  class="d-flex justify-content-between align-items-center mb-3"
-                >
-                  <h3 class="h5 fw-bold mb-0 proj-title">GeminiSensei</h3>
-
-                  <div class="d-flex align-items-center gap-3">
-                    <span class="font-monospace small proj-date">Feb 2026</span>
-                    <a
-                      href="https://github.com/lonlydwolf/GeminiSensei"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="GitHub"
-                      class="proj-link"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        width="18"
-                        height="18"
-                      >
-                        <path
-                          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                        ></path>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <p class="small flex-grow-1 proj-desc">
-                  A desktop-native AI engineering assistant built for the Google
-                  DeepMind Gemini Hackathon. It replaces passive Q&A with a
-                  "Strict Protocol Loop" that mandates live confirmation of
-                  theoretical CS concepts before generating code blocks.
-                </p>
-
-                <!-- What I learned Badges -->
-                <div class="mt-4">
-                  <div
-                    class="font-monospace small mb-2 fw-bold text-uppercase proj-badge-label"
-                  >
-                    Core Knowledge Gained:
-                  </div>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="proj-badge font-monospace"
-                      >LangGraph State Management</span
-                    >
-                    <span class="proj-badge font-monospace"
-                      >Multi-Agent Control Loops</span
-                    >
-                    <span class="proj-badge font-monospace"
-                      >CI/CD & Containerization</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- dotfiles-maintainer -->
-          <div class="col-md-6">
-            <div class="card h-100 proj-card p-4">
-              <div class="card-body d-flex flex-column p-0">
-                <div
-                  class="d-flex justify-content-between align-items-center mb-3"
-                >
-                  <h3 class="h5 fw-bold mb-0 proj-title">
-                    dotfiles-maintainer
-                  </h3>
-
-                  <div class="d-flex align-items-center gap-3">
-                    <span class="font-monospace small proj-date">Jan 2026</span>
-                    <a
-                      href="https://github.com/lonlydwolf/dotfiles-maintainer"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="GitHub"
-                      class="proj-link"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        width="18"
-                        height="18"
-                      >
-                        <path
-                          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                        ></path>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <p class="small flex-grow-1 proj-desc">
-                  An AI-native developer configuration manager built to explore
-                  the Model Context Protocol (MCP) in a local environment
-                  workflow. Features semantic context tracking to flag
-                  architecture drifts across multiple runtime setups.
-                </p>
-
-                <!-- What I learned Badges -->
-                <div class="mt-4">
-                  <div
-                    class="font-monospace small mb-2 fw-bold text-uppercase proj-badge-label"
-                  >
-                    Core Knowledge Gained:
-                  </div>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="proj-badge font-monospace"
-                      >Model Context Protocol (MCP)</span
-                    >
-                    <span class="proj-badge font-monospace"
-                      >Semantic Memory Sync</span
-                    >
-                    <span class="proj-badge font-monospace"
-                      >Tool-Use Contracts</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- CodeT5+ Fine-Tuning -->
-          <div class="col-md-6">
-            <div class="card h-100 proj-card p-4">
-              <div class="card-body d-flex flex-column p-0">
-                <div
-                  class="d-flex justify-content-between align-items-center mb-3"
-                >
-                  <h3 class="h5 fw-bold mb-0 proj-title">
-                    CodeT5+ Model Adaptation
-                  </h3>
-
-                  <div class="d-flex align-items-center gap-3">
-                    <span class="font-monospace small proj-date">Mar 2024</span>
-                    <a
-                      href="https://github.com/lonlydwolf/CodeT5p-220m-Finetuned-For-Code-Generation"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="GitHub"
-                      class="proj-link"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        width="18"
-                        height="18"
-                      >
-                        <path
-                          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                        ></path>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <p class="small flex-grow-1 proj-desc">
-                  Independent deep learning pipeline executing the complete
-                  transfer learning lifecycle to adapt a pre-trained CodeT5+
-                  220M model for domain-specific code generation requirements.
-                </p>
-
-                <!-- What I learned Badges -->
-                <div class="mt-4">
-                  <div
-                    class="font-monospace small mb-2 fw-bold text-uppercase proj-badge-label"
-                  >
-                    Core Knowledge Gained:
-                  </div>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="proj-badge font-monospace"
-                      >PyTorch Training Loops</span
-                    >
-                    <span class="proj-badge font-monospace"
-                      >Hugging Face Ecosystem</span
-                    >
-                    <span class="proj-badge font-monospace"
-                      >Overfitting Mitigation</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- XOR Neural Network from Scratch -->
-          <div class="col-md-6">
-            <div class="card h-100 proj-card p-4">
-              <div class="card-body d-flex flex-column p-0">
-                <div
-                  class="d-flex justify-content-between align-items-center mb-3"
-                >
-                  <h3 class="h5 fw-bold mb-0 proj-title">
-                    XOR First-Principles Network
-                  </h3>
-
-                  <div class="d-flex align-items-center gap-3">
-                    <span class="font-monospace small proj-date">Apr 2020</span>
-                    <a
-                      href="https://github.com/lonlydwolf/XOR-First-Principles-Network"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="GitHub"
-                      class="proj-link"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        width="18"
-                        height="18"
-                      >
-                        <path
-                          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                        ></path>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <p class="small flex-grow-1 proj-desc">
-                  A fully connected neural network compiled without third-party
-                  frameworks to cement absolute mathematical understanding of
-                  algorithmic updates. Hand-coded across C++, C#, and Python
-                  yielding identical results.
-                </p>
-
-                <!-- What I learned Badges -->
-                <div class="mt-4">
-                  <div
-                    class="font-monospace small mb-2 fw-bold text-uppercase proj-badge-label"
-                  >
-                    Core Knowledge Gained:
-                  </div>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="proj-badge font-monospace"
-                      >Backpropagation Calculus</span
-                    >
-                    <span class="proj-badge font-monospace"
-                      >Gradient Descent Optimization</span
-                    >
-                    <span class="proj-badge font-monospace"
-                      >Language-Agnostic Math Foundations</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-5 pt-5 proj-section-divider">
-          <div class="mb-4">
-            <h2 class="display-6 fw-bold mb-2 proj-heading">
-              Production Implementations
-            </h2>
-            <p class="font-monospace small proj-date">
-              Commercial applications engineered for external scale and business
-              logic.
-            </p>
-          </div>
-
-          <div class="row g-4">
-            <div class="col-12">
-              <div
-                class="card proj-card-placeholder p-5 text-center font-monospace small"
+        </header>
+        <section
+          class="faculty-feature"
+          aria-labelledby="faculty-title"
+          id="faculty"
+        >
+          <div class="feature-intro">
+            <div>
+              <span class="status status-current"
+                >Current · Personal-use beta</span
               >
-                Commercial system logs coming soon. Currently expanding core
-                technical foundation above.
+              <h2 id="faculty-title">Faculty</h2>
+            </div>
+            <p>From a tutoring app to a learning workflow I actually use.</p>
+          </div>
+          <p class="feature-description">
+            Seven AI skills with separate roles for planning, teaching,
+            assessment, research, and build review. I use Faculty for my
+            coursework; the course folder keeps the plan and learning records
+            between sessions.
+          </p>
+          <figure class="faculty-workflow" aria-labelledby="workflow-title">
+            <figcaption id="workflow-title">
+              A course that continues across sessions
+            </figcaption>
+            <div class="faculty-roles">
+              <div>
+                <span class="role-action">Plan</span><strong>Advisor</strong
+                ><span>Goals &amp; course units</span>
+              </div>
+              <div>
+                <span class="role-action">Practice</span><strong>Teacher</strong
+                ><span>Lessons &amp; assignments</span>
+              </div>
+              <div>
+                <span class="role-action">Assess</span><strong>Tutor</strong
+                ><span>Understanding &amp; gaps</span>
+              </div>
+              <div>
+                <span class="role-action">Review</span><strong>Editor</strong
+                ><span>Builds &amp; revisions</span>
               </div>
             </div>
+            <div class="course-record">
+              <strong>Shared course records</strong
+              ><span>Plan · notes · assignments · results · next action</span>
+            </div>
+            <p class="workflow-support">
+              Setup, research, and exploration support the course. I select
+              roles at each handoff, with more practice or revision when needed.
+            </p>
+          </figure>
+          <div class="feature-bottom">
+            <p>
+              Built from lessons in GeminiSensei. A personal workflow in
+              development, with checks and limitations documented.
+            </p>
+            <div class="project-links">
+              <a
+                href="https://github.com/lonlydwolf/skills/tree/main/skills/faculty"
+                >Explore Faculty</a
+              ><a
+                href="https://github.com/lonlydwolf/skills/blob/main/skills/faculty/docs/CHECKS.md"
+                >Checks &amp; limitations</a
+              >
+            </div>
           </div>
-        </div>
+        </section>
+        <section
+          class="learning-section"
+          id="learning-projects"
+          aria-labelledby="learning-title"
+        >
+          <h2 id="learning-title">Completed learning projects</h2>
+          <p class="section-intro">
+            Archived with code, checks, and retrospectives. Each project helped
+            me decide what to build next—and what to leave behind.
+          </p>
+          <div class="learning-grid">
+            <article class="learning-project">
+              <div class="project-meta">
+                <span class="status">Completed · Archived</span
+                ><span>Feb 2026</span>
+              </div>
+              <h3>GeminiSensei</h3>
+              <p class="project-subtitle">Desktop AI tutoring</p>
+              <p>
+                I wanted a more useful way to learn with AI, and built this
+                desktop experiment for a competition.
+              </p>
+              <dl>
+                <dt>What I built</dt>
+                <dd>
+                  Connected a React frontend to a Python/FastAPI sidecar in
+                  Tauri, working through persistence and release packaging. I
+                  did most of the work, with a friend and AI helping with the
+                  UI.
+                </dd>
+                <dt>What I took forward</dt>
+                <dd>
+                  The app alone did not provide the learning workflow I needed.
+                  That led to Faculty.
+                </dd>
+              </dl>
+              <div class="project-tags">
+                <span>Tauri</span><span>React</span><span>FastAPI</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/lonlydwolf/GeminiSensei/blob/main/docs/CASE_STUDY.md"
+                  >Engineering case study</a
+                ><a href="https://github.com/lonlydwolf/GeminiSensei"
+                  >Source code</a
+                >
+              </div>
+            </article>
+            <article class="learning-project">
+              <div class="project-meta">
+                <span class="status">Completed · Archived</span
+                ><span>Apr 2020 · Revisited 2026</span>
+              </div>
+              <h3>XOR from first principles</h3>
+              <p class="project-subtitle">Neural networks in three languages</p>
+              <p>
+                A small problem for exploring how a neural network learns,
+                without a machine-learning framework.
+              </p>
+              <dl>
+                <dt>What I built</dt>
+                <dd>
+                  Implemented forward propagation and backpropagation in Python,
+                  C++, and C#. The archived versions include seeded demos and
+                  regression checks.
+                </dd>
+                <dt>What I took forward</dt>
+                <dd>
+                  Numerical checks make the math tangible. These are three
+                  implementations with different training settings, not a claim
+                  of identical results.
+                </dd>
+              </dl>
+              <div class="project-tags">
+                <span>Python</span><span>C++</span><span>C#</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/lonlydwolf/XOR-First-Principles-Network/blob/main/docs/RETROSPECTIVE.md"
+                  >Technical retrospective</a
+                ><a
+                  href="https://github.com/lonlydwolf/XOR-First-Principles-Network"
+                  >Source code</a
+                >
+              </div>
+            </article>
+            <article class="learning-project">
+              <div class="project-meta">
+                <span class="status">Completed · Archived</span
+                ><span>Jan 2026</span>
+              </div>
+              <h3>dotfiles-maintainer</h3>
+              <p class="project-subtitle">Configuration decisions &amp; MCP</p>
+              <p>
+                I wanted AI to help maintain my dotfiles and remember why I made
+                configuration changes.
+              </p>
+              <dl>
+                <dt>What I built</dt>
+                <dd>
+                  Built a Python MCP prototype to record and retrieve supplied
+                  decision rationale using semantic memory.
+                </dd>
+                <dt>What I took forward</dt>
+                <dd>
+                  Choose tools around recurring needs. For my own use, reading
+                  the dotfiles and Git history became a simpler approach.
+                </dd>
+              </dl>
+              <div class="project-tags">
+                <span>Python</span><span>MCP</span><span>Semantic memory</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/lonlydwolf/dotfiles-maintainer/blob/main/docs/CASE_STUDY.md"
+                  >Case study</a
+                ><a href="https://github.com/lonlydwolf/dotfiles-maintainer"
+                  >Source code</a
+                >
+              </div>
+            </article>
+            <article class="learning-project">
+              <div class="project-meta">
+                <span class="status">Completed · Archived</span
+                ><span>Mar 2024</span>
+              </div>
+              <h3>CodeT5+ fine-tuning</h3>
+              <p class="project-subtitle">Model adaptation experiment</p>
+              <p>
+                An experiment in adapting a pretrained model for code
+                generation.
+              </p>
+              <dl>
+                <dt>What I built</dt>
+                <dd>
+                  Explored LoRA and 4-bit model adaptation in a notebook, with
+                  published artifacts.
+                </dd>
+                <dt>What I took forward</dt>
+                <dd>
+                  Evaluation and reproducibility are part of the work. The
+                  retrospective documents methodology limits; no improvement
+                  over the base model was demonstrated.
+                </dd>
+              </dl>
+              <div class="project-tags">
+                <span>LoRA</span><span>Transformers</span
+                ><span>4-bit adaptation</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/lonlydwolf/CodeT5p-220m-Finetuned-For-Code-Generation/blob/main/docs/TECHNICAL_RETROSPECTIVE.md"
+                  >Technical retrospective</a
+                ><a
+                  href="https://github.com/lonlydwolf/CodeT5p-220m-Finetuned-For-Code-Generation"
+                  >Source code</a
+                >
+              </div>
+            </article>
+          </div>
+        </section>
       </section>
     </main>
 
     <!--Footer-->
-    <div id="site-chrome-bottom"></div>
+    <div id="site-chrome-bottom">
+      <footer class="site-footer py-4">
+        <div class="container fallback-footer">
+          <span>Ahmad Mollaei</span
+          ><a href="mailto:contact@ahmadmollaei.dev">Get in touch</a
+          ><a href="/assets/pdf/cv.pdf" download>Download CV</a>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

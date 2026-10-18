@@ -5,21 +5,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <link rel="canonical" href="https://ahmadmollaei.dev/experience/" />
+
     <meta
       name="description"
-      content="Ahmad Mollaei - software engineer building developer tools and AI systems focused on education and diabetes care."
+      content="Ahmad Mollaei’s experience in automotive diagnostics, freight forwarding, logistics, and procurement."
     />
-
-    <meta property="og:title" content="Ahmad Mollaei" />
+    <meta property="og:title" content="Experience | Ahmad Mollaei" />
     <meta
       property="og:description"
-      content="Software engineer building developer tools and AI systems."
+      content="Ahmad Mollaei’s experience in automotive diagnostics, freight forwarding, logistics, and procurement."
     />
     <meta property="og:url" content="https://ahmadmollaei.dev/experience/" />
     <meta property="og:type" content="website" />
-
-    <link rel="canonical" href="https://ahmadmollaei.dev/experience/" />
-
+    <meta
+      property="og:image"
+      content="https://ahmadmollaei.dev/assets/images/social-preview.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Ahmad Mollaei — I build tools I wish existed. Software engineering, backend and systems, applied AI."
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <!--Google Fonts: JetBrains Mono & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,13 +43,6 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <!--Bootstrap JS-->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
     <!--Custom CSS-->
     <link href="/styles.css" rel="stylesheet" />
     <!--Custom JS-->
@@ -52,217 +54,125 @@
 
   <body class="d-flex flex-column min-vh-100 m-0">
     <!--Header-->
-    <header id="site-header"></header>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header id="site-header">
+      <nav class="fallback-nav container" aria-label="Main navigation">
+        <a href="/">Home</a><a href="/projects/">Projects</a
+        ><a href="/about/">About</a
+        ><a href="/experience/" aria-current="page">Experience</a
+        ><a href="/assets/pdf/cv.pdf">View CV</a>
+      </nav>
+    </header>
 
     <!--Fixed SideBars-->
     <div id="site-sidebars"></div>
 
     <!--Main-->
-    <main class="flex-grow-1">
-      <section class="container pt-5 pb-3 py-md-5">
-        <!-- Heading-->
-        <div class="d-flex align-items-center mb-5">
-          <h1 class="visually-hidden">Experience</h1>
-          <h2 class="display-5 fw-bold mb-0 font-monospace exp-heading">
-            <span class="about-section-num">02.</span>Where I've Worked
-          </h2>
-          <div class="ms-4 flex-grow-1 exp-divider"></div>
+    <main id="main-content" tabindex="-1" class="flex-grow-1">
+      <section class="container page-section">
+        <header class="page-heading">
+          <h1>Work experience</h1>
+          <p>
+            Experience in operations and diagnostics shapes how I approach
+            software: understand the problem, investigate the details, and make
+            the next step useful.
+          </p>
+        </header>
+        <div class="experience-list">
+          <article class="experience-entry">
+            <div class="experience-when"><p>Jan 2024 – Present</p></div>
+            <div>
+              <h2>Nile Garage</h2>
+              <p class="experience-role">
+                Computer Diagnostic &amp; Electric Specialist
+              </p>
+              <ul>
+                <li>
+                  Use diagnostic tools and interpret vehicle fault codes to
+                  investigate electrical and performance problems.
+                </li>
+                <li>
+                  Use AI-assisted research to understand technical information
+                  and guide troubleshooting alongside diagnostic tools.
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="experience-entry">
+            <div class="experience-when"><p>Sep 2022 – Dec 2023</p></div>
+            <div>
+              <h2>Yonko Global Forwarding</h2>
+              <p class="experience-role">CEO &amp; Co-founder</p>
+              <ul>
+                <li>
+                  Co-founded and led a freight-forwarding business, coordinating
+                  operations and client needs.
+                </li>
+                <li>
+                  Worked on operational processes across freight documentation,
+                  shipment coordination, and regulatory requirements.
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="experience-entry">
+            <div class="experience-when"><p>Nov 2021 – May 2022</p></div>
+            <div>
+              <h2>Natureland</h2>
+              <p class="experience-role">Logistics Officer</p>
+              <ul>
+                <li>
+                  Coordinated logistics across GCC supply chains, including
+                  shipment reporting and landed-cost analysis.
+                </li>
+                <li>
+                  Supported cost management and negotiations with shipping
+                  providers.
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="experience-entry">
+            <div class="experience-when"><p>Nov 2019 – Oct 2021</p></div>
+            <div>
+              <h2>Afrah Al-Khaleej Co.</h2>
+              <p class="experience-role">Purchase Executive</p>
+              <ul>
+                <li>
+                  Worked on procurement reporting, supplier documentation, and
+                  regulatory clearances.
+                </li>
+                <li>
+                  Helped improve coordination and day-to-day purchasing
+                  workflows.
+                </li>
+              </ul>
+            </div>
+          </article>
         </div>
-
-        <div class="row mt-4">
-          <!-- Left Column: Tab Triggers -->
-          <div class="col-md-3 mb-4 mb-md-0">
-            <div
-              class="nav flex-row flex-md-column nav-pills"
-              role="tablist"
-              aria-orientation="vertical"
-            >
-              <button
-                class="nav-link active font-monospace text-start py-3 px-4 small"
-                id="job-neil-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#job-neil"
-                type="button"
-                role="tab"
-                aria-controls="job-neil"
-                aria-selected="true"
-              >
-                Nile Garage
-              </button>
-
-              <button
-                class="nav-link font-monospace text-start py-3 px-4 small"
-                id="job-yonko-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#job-yonko"
-                type="button"
-                role="tab"
-                aria-controls="job-yonko"
-                aria-selected="false"
-              >
-                Yonko Global
-              </button>
-
-              <button
-                class="nav-link font-monospace text-start py-3 px-4 small"
-                id="job-natureland-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#job-natureland"
-                type="button"
-                role="tab"
-                aria-controls="job-natureland"
-                aria-selected="false"
-              >
-                Natureland
-              </button>
-
-              <button
-                class="nav-link font-monospace text-start py-3 px-4 small"
-                id="job-afrah-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#job-afrah"
-                type="button"
-                role="tab"
-                aria-controls="job-afrah"
-                aria-selected="false"
-              >
-                Afrah Al-Khaleej
-              </button>
-            </div>
-          </div>
-
-          <!-- Right Column: Tab Content -->
-          <div class="col-md-9 ps-md-5">
-            <div class="tab-content">
-              <!-- Nile Garage-->
-              <div
-                class="tab-pane fade show active"
-                id="job-neil"
-                role="tabpanel"
-                aria-labelledby="job-neil-tab"
-              >
-                <h3 class="fw-bold h5 exp-job-title">
-                  Computer Diagnostic & Electric Specialist
-                  <span class="exp-company">@ Nile Garage</span>
-                </h3>
-                <p class="font-monospace exp-date small mb-4">
-                  Jan 2024 - Present
-                </p>
-                <ul class="ps-0">
-                  <li class="mb-3">
-                    Applied programmatic engine control unit (ECU) tuning and
-                    ML-informed diagnostics to systematically resolve complex
-                    vehicle performance anomalies.
-                  </li>
-                  <li class="mb-3">
-                    Leveraged large language models and technical evaluation
-                    software to build fast-resolution debugging workflows,
-                    significantly reducing fault isolation latency.
-                  </li>
-                  <li class="mb-3">
-                    Engineered failure prediction workflows using programmatic
-                    data analysis to map structural component degradation
-                    patterns and minimize asset downtime.
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Yonko Global-->
-              <div
-                class="tab-pane fade"
-                id="job-yonko"
-                role="tabpanel"
-                aria-labelledby="job-yonko-tab"
-              >
-                <h3 class="fw-bold h5 exp-job-title">
-                  CEO & Co-founder
-                  <span class="exp-company">@ Yonko Global Forwarding</span>
-                </h3>
-                <p class="font-monospace exp-date small mb-4">
-                  Sep 2022 - Dec 2023
-                </p>
-                <ul class="ps-0">
-                  <li class="mb-3">
-                    Architected and engineered custom Python automation
-                    pipelines and API integrations into core freight systems,
-                    allowing a lean operational framework to execute logistics
-                    at scale.
-                  </li>
-                  <li class="mb-3">
-                    Automated document analysis pipelines, route optimization
-                    modules, and client event-notifications, removing heavy
-                    layers of manual operational overhead.
-                  </li>
-                  <li class="mb-3">
-                    Deployed algorithmic solutions to parse compliance
-                    frameworks and automate regulatory tracking across complex,
-                    multi-jurisdictional maritime and land border operations.
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Natureland -->
-              <div
-                class="tab-pane fade"
-                id="job-natureland"
-                role="tabpanel"
-                aria-labelledby="job-natureland-tab"
-              >
-                <h3 class="fw-bold h5 exp-job-title">
-                  Logistics Officer
-                  <span class="exp-company">@ Natureland</span>
-                </h3>
-                <p class="font-monospace exp-date small mb-4">
-                  Nov 2021 - May 2022
-                </p>
-                <ul class="ps-0">
-                  <li class="mb-3">
-                    Built and deployed Python scripts to automate landed cost
-                    data processing and shipment metrics reporting, drastically
-                    improving data pipeline accuracy across GCC supply chains.
-                  </li>
-                  <li class="mb-3">
-                    Utilized data analysis scripts to identify systemic cargo
-                    inefficiencies and cost leaks, directly supporting
-                    negotiation strategies with international shipping lines.
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Afrah Al-Khaleej -->
-              <div
-                class="tab-pane fade"
-                id="job-afrah"
-                role="tabpanel"
-                aria-labelledby="job-afrah-tab"
-              >
-                <h3 class="fw-bold h5 exp-job-title">
-                  Purchase Executive
-                  <span class="exp-company">@ Afrah Al-Khaleej Co.</span>
-                </h3>
-                <p class="font-monospace exp-date small mb-4">
-                  Nov 2019 - Oct 2021
-                </p>
-                <ul class="ps-0">
-                  <li class="mb-3">
-                    Applied computational data parsing models to optimize
-                    procurement report pipelines and accelerate supplier
-                    technical document verification protocols.
-                  </li>
-                  <li class="mb-3">
-                    Modeled internal process workflows programmatically to
-                    locate operational bottlenecks, speeding up throughput
-                    across complex state regulatory clearances.
-                  </li>
-                </ul>
-              </div>
-            </div>
+        <div class="experience-next">
+          <p>
+            My public software work lives in the project repositories, with
+            implementation details and retrospectives.
+          </p>
+          <div class="page-actions">
+            <a href="/projects/">Explore the projects</a
+            ><a href="/assets/pdf/cv.pdf">View CV</a
+            ><a href="/assets/pdf/cv.pdf" download>Download CV</a>
           </div>
         </div>
       </section>
     </main>
 
     <!--Footer-->
-    <div id="site-chrome-bottom"></div>
+    <div id="site-chrome-bottom">
+      <footer class="site-footer py-4">
+        <div class="container fallback-footer">
+          <span>Ahmad Mollaei</span
+          ><a href="mailto:contact@ahmadmollaei.dev">Get in touch</a
+          ><a href="/assets/pdf/cv.pdf" download>Download CV</a>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

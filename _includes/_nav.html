@@ -1,10 +1,13 @@
-<nav class="navbar navbar-expand-lg fixed-top site-navbar">
+<nav
+  class="navbar navbar-expand-lg fixed-top site-navbar"
+  aria-label="Primary navigation"
+>
   <div class="container">
     <!--Logo-->
     <a class="navbar-brand d-flex align-items-center" href="/">
       <img
         src="/assets/images/logo.png"
-        alt="Logo"
+        alt=""
         class="navbar-logo me-2"
         id="nav-logo"
       />
@@ -15,10 +18,11 @@
       <!-- Theme Toggle -->
       <button
         id="theme-toggle"
+        type="button"
         class="btn-theme-toggle"
         aria-label="Toggle theme"
       >
-        <!-- Sun visable in dark mode - click to go light -->
+        <!-- Sun visible in dark mode -->
         <svg
           id="icon-sun"
           xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +45,7 @@
           <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
-        <!-- Moon: visable in light mode - click to go dark -->
+        <!-- Moon visible in light mode -->
         <svg
           id="icon-moon"
           xmlns="http://www.w3.org/2000/svg"
@@ -62,8 +66,7 @@
       <button
         class="navbar-toggler"
         type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
+        id="nav-toggle"
         aria-controls="navbarNav"
         aria-expanded="false"
         aria-label="Toggle navigation"
@@ -89,14 +92,9 @@
         </li>
         <!--CV-->
         <li class="nav-item ms-lg-2">
-          <button
-            type="button"
-            class="btn btn-resume font-monospace"
-            data-bs-toggle="modal"
-            data-bs-target="#resumeModal"
-          >
-            Resume
-          </button>
+          <a href="/assets/pdf/cv.pdf" class="btn btn-resume font-monospace">
+            View CV
+          </a>
         </li>
       </ul>
     </div>

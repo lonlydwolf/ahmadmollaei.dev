@@ -1,18 +1,26 @@
-// --- Theme Toggle ----------
-
 const html = document.documentElement;
 const STORAGE_KEY = "theme";
 const DARK = "dark";
 const LIGHT = "light";
 
-function applyTheme(theme) {
-  // Set data-theme on <html>
+function readTheme() {
+  try {
+    return localStorage.getItem(STORAGE_KEY) === LIGHT ? LIGHT : DARK;
+  } catch {
+    return DARK;
+  }
+}
+
+function applyTheme(theme, persist = false) {
   html.setAttribute("data-theme", theme);
+  if (persist) {
+    try {
+      localStorage.setItem(STORAGE_KEY, theme);
+    } catch {
+      // Theme switching still works when browser storage is unavailable.
+    }
+  }
 
-  // Keep Key for other pages
-  localStorage.setItem(STORAGE_KEY, theme);
-
-  // Swap navbar logo
   const navLogo = document.getElementById("nav-logo");
   if (navLogo) {
     navLogo.src =
@@ -20,47 +28,82 @@ function applyTheme(theme) {
         ? "/assets/images/logo.png"
         : "/assets/images/logo-light.png";
   }
+  document
+    .getElementById("theme-toggle")
+    ?.setAttribute(
+      "aria-label",
+      `Switch to ${theme === DARK ? LIGHT : DARK} theme`,
+    );
 }
 
 function toggleTheme() {
-  const current = html.getAttribute("data-theme");
-  applyTheme(current === DARK ? LIGHT : DARK);
+  applyTheme(html.getAttribute("data-theme") === DARK ? LIGHT : DARK, true);
 }
 
-// Check Theme when loading page. if no Key Default DARK.
-const savedTheme = localStorage.getItem(STORAGE_KEY) || DARK;
-document.documentElement.setAttribute("data-theme", savedTheme);
+applyTheme(readTheme());
 
-// --- Shared Components ---
+function normalizePath(path) {
+  return path.replace(/index\.html$/, "").replace(/\/$/, "") || "/";
+}
+
+function initializeNavigation() {
+  const themeToggle = document.getElementById("theme-toggle");
+  if (themeToggle) themeToggle.onclick = toggleTheme;
+  applyTheme(html.getAttribute("data-theme"));
+
+  document.querySelectorAll("#site-header a[href]").forEach((link) => {
+    const active =
+      normalizePath(link.getAttribute("href")) ===
+      normalizePath(location.pathname);
+    link.classList.toggle("active", active);
+    if (active) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+
+  // Bootstrap supplies the layout; navigation works even if its JS CDN fails.
+  const menuToggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("navbarNav");
+  if (menuToggle && menu) {
+    const setExpanded = (expanded) => {
+      menu.classList.toggle("show", expanded);
+      menuToggle.setAttribute("aria-expanded", String(expanded));
+    };
+    menuToggle.onclick = () =>
+      setExpanded(menuToggle.getAttribute("aria-expanded") !== "true");
+    document.getElementById("site-header").onkeydown = (event) => {
+      if (
+        event.key === "Escape" &&
+        menuToggle.getAttribute("aria-expanded") === "true"
+      ) {
+        setExpanded(false);
+        menuToggle.focus();
+      }
+    };
+  }
+}
+
+async function loadFragment(id, path, initialize) {
+  const target = document.getElementById(id);
+  if (!target) return;
+  try {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const markup = await response.text();
+    target.innerHTML = markup;
+  } catch (error) {
+    // Keep the page's usable static links rather than replacing them with an error page.
+    console.warn(`Could not load ${path}; keeping the page fallback.`, error);
+  }
+  initialize?.();
+}
 
 async function loadChrome() {
-  const [nav, sidebars, bottom] = await Promise.all([
-    fetch("/_includes/_nav.html").then((r) => r.text()),
-    fetch("/_includes/_sidebars.html").then((r) => r.text()),
-    fetch("/_includes/_footer-modal.html").then((r) => r.text()),
+  initializeNavigation();
+  await Promise.allSettled([
+    loadFragment("site-header", "/_includes/_nav.html", initializeNavigation),
+    loadFragment("site-sidebars", "/_includes/_sidebars.html"),
+    loadFragment("site-chrome-bottom", "/_includes/_footer-modal.html"),
   ]);
-
-  document.getElementById("site-header").innerHTML = nav;
-  document.getElementById("site-sidebars").innerHTML = sidebars;
-  document.getElementById("site-chrome-bottom").innerHTML = bottom;
-
-  // Wire Theme Toggle (just been added to the DOM)
-  document
-    .getElementById("theme-toggle")
-    .addEventListener("click", toggleTheme);
-
-  // Swap logo to match saved theme
-  applyTheme(savedTheme);
-
-  // Mark the active nav link based on current page
-  document
-    .querySelector(`.nav-link[href="${location.pathname}"]`)
-    ?.classList.add("active");
-
-  // Bootstarp tooltip
-  document
-    .querySelectorAll('[data-bs-toggle="tooltip"]')
-    .forEach((el) => new bootstrap.Tooltip(el));
 }
 
 document.addEventListener("DOMContentLoaded", loadChrome);

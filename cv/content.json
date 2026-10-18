@@ -1,0 +1,104 @@
+{
+  "name": "Ahmad Mollaei",
+  "direction": "Product-minded software engineering",
+  "email": "contact@ahmadmollaei.dev",
+  "website": "ahmadmollaei.dev",
+  "github": "github.com/lonlydwolf",
+  "location": "Benid-Alghar, KW",
+  "phone": "+965 95544145",
+  "summary": "Computer Science graduate building software alongside a career in automotive diagnostics and logistics. Focused on useful tools and strong backend and systems foundations, with a long-term direction in applied AI and intelligent applications.",
+  "current": {
+    "name": "Faculty",
+    "status": "Current work | Personal-use beta",
+    "url": "https://github.com/lonlydwolf/skills/tree/main/skills/faculty",
+    "description": "Seven AI skills I use for coursework, with separate roles for course planning, teaching, assessment, research, and build review. Course records preserve plans, assignments, and results across sessions.",
+    "lesson": "Grew out of GeminiSensei: shifted from a standalone tutoring app toward a learning workflow I actually use. Workflow checks and limitations are documented in the repository."
+  },
+  "projects": [
+    {
+      "name": "GeminiSensei",
+      "date": "Feb 2026",
+      "url": "https://github.com/lonlydwolf/GeminiSensei/blob/main/docs/CASE_STUDY.md",
+      "stack": "Tauri / React / Python / FastAPI",
+      "description": "AI tutoring desktop experiment built for the Google DeepMind Gemini Hackathon. Did most of the development, with a friend and AI helping with the UI. Connected the frontend and backend, worked through persistence and release packaging, and used the lessons to develop Faculty."
+    },
+    {
+      "name": "XOR Neural Network with Backpropagation",
+      "date": "Apr 2020",
+      "url": "https://github.com/lonlydwolf/XOR-First-Principles-Network/blob/main/docs/RETROSPECTIVE.md",
+      "stack": "Python / C++ / C#",
+      "description": "Implemented forward propagation, backpropagation, and weight updates without ML frameworks. The three implementations now include seeded demos and focused regression checks; their parameters and training budgets differ."
+    },
+    {
+      "name": "dotfiles-maintainer",
+      "date": "Jan 2026",
+      "url": "https://github.com/lonlydwolf/dotfiles-maintainer/blob/main/docs/CASE_STUDY.md",
+      "stack": "Python / MCP / Semantic memory",
+      "description": "Built a prototype for recording and retrieving configuration decisions. Learned to define tool contracts around recurring needs and compare the maintenance cost with a simpler workflow using dotfiles and Git history."
+    },
+    {
+      "name": "CodeT5+ Fine-Tuning for Code Generation",
+      "date": "Mar 2024",
+      "url": "https://github.com/lonlydwolf/CodeT5p-220m-Finetuned-For-Code-Generation/blob/main/docs/TECHNICAL_RETROSPECTIVE.md",
+      "stack": "LoRA / 4-bit adaptation / Hugging Face",
+      "description": "Notebook experiment adapting CodeT5+ 220M for code generation. Published artifacts and documented methodology and reproducibility limitations; no demonstrated improvement over the base model."
+    }
+  ],
+  "skills": [
+    ["Languages", "Python, TypeScript, C++, C#, Bash"],
+    ["Applications & tooling", "FastAPI, React, Tauri, FastMCP, Git, GitHub Actions, Docker, Linux, Jujutsu"],
+    ["AI experiments", "PyTorch, Hugging Face Transformers, LangGraph, LangChain, Gemini API, MCP"]
+  ],
+  "employment": [
+    {
+      "role": "Computer Diagnostic & Electric Specialist",
+      "company": "Nile Garage | Kuwait",
+      "dates": "Jan 2024 - Present",
+      "bullets": [
+        "Diagnose vehicle electrical and performance issues using automotive diagnostic tools and fault codes.",
+        "Use AI-assisted research to understand diagnostic information and guide troubleshooting alongside practical investigation."
+      ]
+    },
+    {
+      "role": "CEO & Co-founder",
+      "company": "Yonko Global Forwarding Company | Kuwait",
+      "dates": "Sep 2022 - Dec 2023",
+      "bullets": [
+        "Founded and operated a freight forwarding startup, coordinating documentation, client communication, and day-to-day logistics.",
+        "Managed freight operations and compliance across sea, air, and land transport."
+      ]
+    },
+    {
+      "role": "Logistics Officer",
+      "company": "Khalid Sultan / Natureland | Kuwait",
+      "dates": "Nov 2021 - May 2022",
+      "bullets": [
+        "Managed GCC import operations for an organic food supply chain, including shipment reporting and landed cost analysis.",
+        "Coordinated with shipping lines and air freight agents, negotiated rates, and identified opportunities to manage freight costs."
+      ]
+    },
+    {
+      "role": "Purchase Executive / Customs Brokerage Liaison",
+      "company": "Afrah Al-Khaleej Co. | Kuwait",
+      "dates": "Nov 2019 - Oct 2021",
+      "bullets": [
+        "Managed procurement and customs workflows for a building materials trading company.",
+        "Coordinated supplier documentation, procurement reporting, and customs approval requirements."
+      ]
+    }
+  ],
+  "education": {
+    "continuing": "Self-Directed Continuing Education",
+    "coursework": "Mathematics for ML & Data Science Specialization, ML & Deep Learning Specialization",
+    "university": "University of Tabriz",
+    "dates": "Sep 2014 - Jun 2019",
+    "degree": "B.Sc. Computer Science",
+    "gpa": "14.67/20"
+  },
+  "certificate": {
+    "name": "Data Science Math Skills",
+    "issuer": "Duke University",
+    "date": "Apr 2024"
+  },
+  "languages": "Arabic (Native), Persian (Native), English (Fluent)"
+}

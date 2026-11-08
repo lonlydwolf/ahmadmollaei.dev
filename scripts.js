@@ -7,15 +7,21 @@ const STORAGE_KEY = "theme";
 const DARK = "dark";
 const LIGHT = "light";
 
-// Match the navbar logo to the current theme
-function syncLogo() {
+// Match the navbar logo and the toggle's label to the current theme
+function syncThemeUI() {
+  const isLight = html.getAttribute("data-theme") === LIGHT;
   const navLogo = document.getElementById("nav-logo");
   if (navLogo) {
-    navLogo.src =
-      html.getAttribute("data-theme") === LIGHT
-        ? "/assets/images/logo-light.png"
-        : "/assets/images/logo.png";
+    navLogo.src = isLight
+      ? "/assets/images/logo-light.png"
+      : "/assets/images/logo.png";
   }
+  document
+    .getElementById("theme-toggle")
+    ?.setAttribute(
+      "aria-label",
+      isLight ? "Switch to dark theme" : "Switch to light theme",
+    );
 }
 
 function toggleTheme() {
@@ -27,7 +33,7 @@ function toggleTheme() {
     localStorage.setItem(STORAGE_KEY, theme);
   } catch {}
 
-  syncLogo();
+  syncThemeUI();
 }
 
 // --- Shared Components ---
@@ -59,12 +65,15 @@ async function loadChrome() {
     ?.addEventListener("click", toggleTheme);
 
   // Swap logo right after injection, before the first paint of the nav
-  syncLogo();
+  syncThemeUI();
 
-  // Mark the active nav link based on current page
-  document
-    .querySelector(`.nav-link[href="${location.pathname}"]`)
-    ?.classList.add("active");
+  // Mark the active nav link (/about/ and /about/index.html both match)
+  const path = location.pathname.replace(/index\.html$/, "");
+  const activeLink = document.querySelector(`.navbar .nav-link[href="${path}"]`);
+  if (activeLink) {
+    activeLink.classList.add("active");
+    activeLink.setAttribute("aria-current", "page");
+  }
 }
 
 // Bootstrap tooltips live in page content, so they don't wait on the includes

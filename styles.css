@@ -574,7 +574,7 @@ html[data-theme="light"] #icon-moon {
   color: var(--ctp-text);
 }
 
-.proj-data {
+.proj-date {
   color: var(--ctp-subtext0);
 }
 
@@ -585,13 +585,6 @@ html[data-theme="light"] #icon-moon {
 
 .proj-section-divider {
   border-top: 1px solid var(--ctp-surface0);
-}
-
-.proj-card-placeholder {
-  background-color: transparent;
-  border: 1px dashed var(--ctp-surface0);
-  color: var(--ctp-subtext0);
-  border-radius: 8px;
 }
 
 .proj-link {

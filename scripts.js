@@ -40,25 +40,32 @@ function toggleTheme() {
 
 // Inject one partial. A failed include is logged and skipped so the rest of
 // the page still initialises (and a 404 page is never injected).
+// Resolves true once the partial is in the DOM.
 async function loadInclude(id, url) {
   const el = document.getElementById(id);
-  if (!el) return;
+  if (!el) return false;
   try {
     const r = await fetch(url);
     if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
     el.innerHTML = await r.text();
+    return true;
   } catch (err) {
     console.error("Include failed:", err);
+    return false;
   }
 }
 
-async function loadChrome() {
-  await Promise.all([
-    loadInclude("site-header", "/_includes/_nav.html"),
-    loadInclude("site-sidebars", "/_includes/_sidebars.html"),
-    loadInclude("site-chrome-bottom", "/_includes/_footer-modal.html"),
-  ]);
+// Each include loads on its own, so a slow sidebar or footer never delays the
+// navbar's setup.
+function loadChrome() {
+  loadInclude("site-header", "/_includes/_nav.html").then((ok) => {
+    if (ok) initNav();
+  });
+  loadInclude("site-sidebars", "/_includes/_sidebars.html");
+  loadInclude("site-chrome-bottom", "/_includes/_footer-modal.html");
+}
 
+function initNav() {
   // Wire Theme Toggle (just been added to the DOM)
   document
     .getElementById("theme-toggle")

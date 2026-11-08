@@ -720,3 +720,15 @@ html[data-theme="light"] .btn-close {
   --bs-tooltip-bg: var(--ctp-surface0);
   --bs-tooltip-color: var(--ctp-text);
 }
+
+/* Reduced motion: keep the colour changes, drop the hover movement */
+@media (prefers-reduced-motion: reduce) {
+  .navbar-logo:hover,
+  .social-list a:hover,
+  .email-wrapper a:hover,
+  .proj-card:hover,
+  .proj-link:hover,
+  .footer-social-link:hover {
+    transform: none;
+  }
+}

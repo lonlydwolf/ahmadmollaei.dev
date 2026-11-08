@@ -33,21 +33,31 @@ document.documentElement.setAttribute("data-theme", savedTheme);
 
 // --- Shared Components ---
 
-async function loadChrome() {
-  const [nav, sidebars, bottom] = await Promise.all([
-    fetch("/_includes/_nav.html").then((r) => r.text()),
-    fetch("/_includes/_sidebars.html").then((r) => r.text()),
-    fetch("/_includes/_footer-modal.html").then((r) => r.text()),
-  ]);
+// Inject one partial. A failed include is logged and skipped so the rest of
+// the page still initialises (and a 404 page is never injected).
+async function loadInclude(id, url) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  try {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
+    el.innerHTML = await r.text();
+  } catch (err) {
+    console.error("Include failed:", err);
+  }
+}
 
-  document.getElementById("site-header").innerHTML = nav;
-  document.getElementById("site-sidebars").innerHTML = sidebars;
-  document.getElementById("site-chrome-bottom").innerHTML = bottom;
+async function loadChrome() {
+  await Promise.all([
+    loadInclude("site-header", "/_includes/_nav.html"),
+    loadInclude("site-sidebars", "/_includes/_sidebars.html"),
+    loadInclude("site-chrome-bottom", "/_includes/_footer-modal.html"),
+  ]);
 
   // Wire Theme Toggle (just been added to the DOM)
   document
     .getElementById("theme-toggle")
-    .addEventListener("click", toggleTheme);
+    ?.addEventListener("click", toggleTheme);
 
   // Swap logo to match saved theme
   applyTheme(savedTheme);
@@ -56,11 +66,17 @@ async function loadChrome() {
   document
     .querySelector(`.nav-link[href="${location.pathname}"]`)
     ?.classList.add("active");
+}
 
-  // Bootstarp tooltip
+// Bootstrap tooltips live in page content, so they don't wait on the includes
+function initTooltips() {
+  if (!window.bootstrap) return;
   document
     .querySelectorAll('[data-bs-toggle="tooltip"]')
     .forEach((el) => new bootstrap.Tooltip(el));
 }
 
-document.addEventListener("DOMContentLoaded", loadChrome);
+document.addEventListener("DOMContentLoaded", () => {
+  initTooltips();
+  loadChrome();
+});

@@ -67,11 +67,239 @@
             <span class="about-section-num">03.</span>Projects
           </h2>
           <p class="text-muted font-monospace small">
-            An archive of what I've built to master new engineering domains.
+            What I'm working on now, and the learning projects that led here.
           </p>
         </div>
 
-        <!-- Educational & First-Principels Projects-->
+        <!-- Current Work -->
+        <div class="mb-4">
+          <h2 class="display-6 fw-bold mb-2 proj-heading">Current Work</h2>
+          <p class="font-monospace small proj-date">
+            Tools I'm building and using now.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Faculty -->
+          <div class="col-md-6">
+            <div class="card h-100 proj-card p-4">
+              <div class="card-body d-flex flex-column p-0">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <h3 class="h5 fw-bold mb-0 proj-title">Faculty</h3>
+
+                  <div class="d-flex align-items-center gap-3">
+                    <span class="font-monospace small proj-date">Aug 2026</span>
+                    <a
+                      href="https://github.com/lonlydwolf/skills/tree/main/skills/faculty"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="GitHub"
+                      class="proj-link"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        width="18"
+                        height="18"
+                      >
+                        <path
+                          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p class="small flex-grow-1 proj-desc">
+                  Seven AI skills I use for my own coursework, with separate
+                  roles for course planning, teaching, assessment, research and
+                  build review. Course records keep plans, assignments and
+                  results across sessions. It grew out of GeminiSensei: I moved
+                  from building a standalone tutoring app to designing the
+                  learning workflow I actually use. Personal-use beta.
+                </p>
+                <a
+                  href="https://github.com/lonlydwolf/skills/blob/main/skills/faculty/docs/CHECKS.md"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="proj-link align-self-start text-decoration-none font-monospace small mt-2"
+                  >Checks &amp; limitations &rarr;</a
+                >
+
+                <div class="mt-4">
+                  <div
+                    class="font-monospace small mb-2 fw-bold text-uppercase proj-badge-label"
+                  >
+                    Highlights:
+                  </div>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="proj-badge font-monospace"
+                      >Agent Skills</span
+                    >
+                    <span class="proj-badge font-monospace"
+                      >Role-Based Workflow</span
+                    >
+                    <span class="proj-badge font-monospace"
+                      >Persistent Course Records</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- tapwright -->
+          <div class="col-md-6">
+            <div class="card h-100 proj-card p-4">
+              <div class="card-body d-flex flex-column p-0">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <h3 class="h5 fw-bold mb-0 proj-title">tapwright</h3>
+
+                  <div class="d-flex align-items-center gap-3">
+                    <span class="font-monospace small proj-date">Oct 2026</span>
+                    <a
+                      href="https://github.com/lonlydwolf/tapwright"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="GitHub"
+                      class="proj-link"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        width="18"
+                        height="18"
+                      >
+                        <path
+                          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p class="small flex-grow-1 proj-desc">
+                  A Go CLI for managing a local personal Homebrew tap, built
+                  through a deliberate solo development workflow. It is in early
+                  development: the first command, <span
+                  class="font-monospace">inspect</span>, validates a GitHub
+                  repository URL offline and prints its owner and name as JSON.
+                  Release discovery and formula management are planned but not
+                  built yet.
+                </p>
+
+                <div class="mt-4">
+                  <div
+                    class="font-monospace small mb-2 fw-bold text-uppercase proj-badge-label"
+                  >
+                    Highlights:
+                  </div>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="proj-badge font-monospace"
+                      >Go</span
+                    >
+                    <span class="proj-badge font-monospace"
+                      >CLI Design</span
+                    >
+                    <span class="proj-badge font-monospace"
+                      >Exit-Code &amp; Output Checks</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Animetro -->
+          <div class="col-md-6">
+            <div class="card h-100 proj-card p-4">
+              <div class="card-body d-flex flex-column p-0">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <h3 class="h5 fw-bold mb-0 proj-title">Animetro</h3>
+
+                  <div class="d-flex align-items-center gap-3">
+                    <span class="font-monospace small proj-date">Nov 2026</span>
+                    <a
+                      href="https://github.com/lonlydwolf/animetro"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="GitHub"
+                      class="proj-link"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        width="18"
+                        height="18"
+                      >
+                        <path
+                          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <p class="small flex-grow-1 proj-desc">
+                  Type an anime's name and get its whole franchise laid out as a
+                  metro line in watch order, using live AniList data. It ships
+                  as a macOS app through my Homebrew tap and as a plain web app
+                  from the same files. Built entirely by AI: Claude (Opus 5.5)
+                  wrote the code, tests and release workflow, while I directed
+                  the features, tested the app and made the decisions.
+                </p>
+
+                <div class="mt-4">
+                  <div
+                    class="font-monospace small mb-2 fw-bold text-uppercase proj-badge-label"
+                  >
+                    Highlights:
+                  </div>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="proj-badge font-monospace"
+                      >AniList API</span
+                    >
+                    <span class="proj-badge font-monospace"
+                      >Swift + WebKit macOS App</span
+                    >
+                    <span class="proj-badge font-monospace"
+                      >Homebrew Cask</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Learning Projects -->
+        <div class="mt-5 pt-5 mb-4 proj-section-divider">
+          <h2 class="display-6 fw-bold mb-2 proj-heading">Learning Projects</h2>
+          <p class="font-monospace small proj-date">
+            Completed and archived. Their code, checks and write-ups preserve
+            what I built and learned.
+          </p>
+        </div>
+
+        <!-- Educational & First-Principles Projects-->
         <div class="row g-4">
           <!-- GeminiSensei -->
           <div class="col-md-6">
@@ -338,29 +566,6 @@
                     >
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-5 pt-5 proj-section-divider">
-          <div class="mb-4">
-            <h2 class="display-6 fw-bold mb-2 proj-heading">
-              Production Implementations
-            </h2>
-            <p class="font-monospace small proj-date">
-              Commercial applications engineered for external scale and business
-              logic.
-            </p>
-          </div>
-
-          <div class="row g-4">
-            <div class="col-12">
-              <div
-                class="card proj-card-placeholder p-5 text-center font-monospace small"
-              >
-                Commercial system logs coming soon. Currently expanding core
-                technical foundation above.
               </div>
             </div>
           </div>

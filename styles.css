@@ -587,13 +587,6 @@ html[data-theme="light"] #icon-moon {
   border-top: 1px solid var(--ctp-surface0);
 }
 
-.proj-card-placeholder {
-  background-color: transparent;
-  border: 1px dashed var(--ctp-surface0);
-  color: var(--ctp-subtext0);
-  border-radius: 8px;
-}
-
 .proj-link {
   color: var(--ctp-subtext0);
   transition:

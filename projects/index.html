@@ -491,10 +491,20 @@
                   </div>
                 </div>
                 <p class="small flex-grow-1 proj-desc">
-                  Independent deep learning pipeline executing the complete
-                  transfer learning lifecycle to adapt a pre-trained CodeT5+
-                  220M model for domain-specific code generation requirements.
+                  A 2024 notebook experiment fine-tuning Salesforce's CodeT5+
+                  220M on Python description/code pairs with LoRA and 4-bit
+                  quantization. The model and adapter files are published, but
+                  no evaluation shows an improvement over the base model; the
+                  retrospective documents the methodology and reproducibility
+                  gaps.
                 </p>
+                <a
+                  href="https://github.com/lonlydwolf/CodeT5p-220m-Finetuned-For-Code-Generation/blob/main/docs/TECHNICAL_RETROSPECTIVE.md"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="proj-link align-self-start text-decoration-none font-monospace small mt-2"
+                  >Technical retrospective &rarr;</a
+                >
 
                 <!-- What I learned Badges -->
                 <div class="mt-4">
@@ -505,13 +515,13 @@
                   </div>
                   <div class="d-flex flex-wrap gap-2">
                     <span class="proj-badge font-monospace"
-                      >PyTorch Training Loops</span
+                      >LoRA / PEFT</span
                     >
                     <span class="proj-badge font-monospace"
                       >Hugging Face Ecosystem</span
                     >
                     <span class="proj-badge font-monospace"
-                      >Overfitting Mitigation</span
+                      >4-bit Quantization</span
                     >
                   </div>
                 </div>

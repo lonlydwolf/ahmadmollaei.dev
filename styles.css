@@ -30,9 +30,14 @@
   --sidebar-gap: 20px;
   --sidebar-display: none;
   --container-width: 100%;
+
+  /* Native UI (scrollbars, form controls) follows the site theme */
+  color-scheme: dark;
 }
 
 html[data-theme="light"] {
+  color-scheme: light;
+
   /* Colors light-Mode */
   --ctp-base: #eff1f5;
   --ctp-mantle: #e6e9ef;

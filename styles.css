@@ -406,7 +406,7 @@ html[data-theme="light"] #icon-moon {
 
 .about-bio-border strong {
   color: var(--ctp-text);
-  font-weight: 600;
+  font-weight: 700; /* Inter 600 isn't loaded; 600 already rendered as 700 */
 }
 
 .about-card {

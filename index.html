@@ -33,6 +33,10 @@
 
     <!--Theme: set before first paint to avoid a flash-->
     <script>
+      // Theme bootstrap: inline on purpose (an external file would block first paint).
+      // Identical copies: index.html, about/index.html, experience/index.html,
+      // projects/index.html, 404.html. scripts.js shares the "theme" key and the
+      // "light"/"dark" values. Change one, change them all.
       (function () {
         var t;
         try {

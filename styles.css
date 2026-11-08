@@ -44,7 +44,7 @@ html[data-theme="light"] {
   --ctp-surface0: #ccd0da;
   --ctp-text: #4c4f69;
   --ctp-subtext0: #5c5f77;
-  --ctp-mauve: #8839ef;
+  --ctp-mauve: #8737ef; /* Latte mauve #8839ef nudged darker to reach 4.5:1 on mantle */
 }
 
 html {

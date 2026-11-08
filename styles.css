@@ -38,7 +38,7 @@ html[data-theme="light"] {
   --ctp-mantle: #e6e9ef;
   --ctp-surface0: #ccd0da;
   --ctp-text: #4c4f69;
-  --ctp-subtext0: #6c6f85;
+  --ctp-subtext0: #5c5f77;
   --ctp-mauve: #8839ef;
 }
 
@@ -422,12 +422,6 @@ html[data-theme="light"] #icon-moon {
   border-radius: 4px;
   background-color: var(--ctp-surface0);
   border: 1px solid var(--ctp-surface0);
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
-}
-
-.about-card .badge:hover {
-  opacity: 1;
 }
 
 .icon-badge {
@@ -447,6 +441,11 @@ html[data-theme="light"] #icon-moon {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--ctp-subtext0);
+}
+
+/* subtext0 on surface0 is only 4.05:1 in light mode */
+html[data-theme="light"] .text-badge {
+  color: var(--ctp-text);
 }
 
 .about-learning-section {
@@ -636,7 +635,6 @@ html[data-theme="light"] #icon-moon {
 
 .not-found-comment {
   color: var(--ctp-subtext0);
-  opacity: 0.5;
 }
 
 .not-found-cmd {

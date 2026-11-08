@@ -1,27 +1,27 @@
+# A crawler obeys only the most specific group that names it, so shared rules
+# are repeated in each group that needs them.
+
+# Everyone else: search yes, AI answers yes, training no
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Disallow: /assets/pdf/archive/
 Allow: /
 
-# AI Search Crawlers (Allow real-time search & indexing)
+# AI search crawlers and user-requested fetches: allowed
 User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Disallow: /assets/pdf/archive/
 Allow: /
 
-User-agent: Claude-Web
-Allow: /
-
-# AI Training Crawlers (Explicitly block model training)
+# AI training crawlers: blocked
 User-agent: GPTBot
-Disallow: /
-
 User-agent: ClaudeBot
-Disallow: /
-
 User-agent: Google-Extended
-Disallow: /
-
 User-agent: Bytespider
+User-agent: CCBot
 Disallow: /
-
-# Content preferences for modern protocols
-Content-Signal: ai-train=no, search=yes, ai-input=no
 
 Sitemap: https://ahmadmollaei.dev/sitemap.xml

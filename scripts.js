@@ -89,6 +89,15 @@ function initTooltips() {
   document
     .querySelectorAll('[data-bs-toggle="tooltip"]')
     .forEach((el) => new bootstrap.Tooltip(el));
+
+  // Skill icons are already named by aria-label. Bootstrap also points
+  // aria-describedby at the tooltip (same text), so screen readers say the
+  // name twice. "inserted" fires on every show, right after Bootstrap sets it.
+  document.querySelectorAll(".icon-badge[aria-label]").forEach((el) =>
+    el.addEventListener("inserted.bs.tooltip", () =>
+      el.removeAttribute("aria-describedby"),
+    ),
+  );
 }
 
 document.addEventListener("DOMContentLoaded", () => {

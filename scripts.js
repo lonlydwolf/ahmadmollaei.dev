@@ -1,6 +1,7 @@
 // --- Theme Toggle ----------
 // data-theme is set before first paint by the inline script in each <head>
 // (saved choice, else prefers-color-scheme). Storage is only written on toggle.
+// Keep STORAGE_KEY/DARK/LIGHT in sync with those five inline copies.
 
 const html = document.documentElement;
 const STORAGE_KEY = "theme";

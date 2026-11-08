@@ -56,6 +56,20 @@ main {
   padding-top: var(--navbar-height);
 }
 
+/* Skip link: shown on focus, above the fixed navbar */
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1100;
+  padding: 0.5rem 1rem;
+  background-color: var(--ctp-mantle);
+  color: var(--ctp-mauve);
+  border: 1px solid var(--ctp-mauve);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+}
+
 /* Header*/
 /* NavBar*/
 

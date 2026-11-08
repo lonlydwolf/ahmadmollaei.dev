@@ -9,8 +9,10 @@ function applyTheme(theme) {
   // Set data-theme on <html>
   html.setAttribute("data-theme", theme);
 
-  // Keep Key for other pages
-  localStorage.setItem(STORAGE_KEY, theme);
+  // Keep Key for other pages (storage can be blocked; that must not break the page)
+  try {
+    localStorage.setItem(STORAGE_KEY, theme);
+  } catch {}
 
   // Swap navbar logo
   const navLogo = document.getElementById("nav-logo");
@@ -28,7 +30,10 @@ function toggleTheme() {
 }
 
 // Check Theme when loading page. if no Key Default DARK.
-const savedTheme = localStorage.getItem(STORAGE_KEY) || DARK;
+let savedTheme = DARK;
+try {
+  savedTheme = localStorage.getItem(STORAGE_KEY) || DARK;
+} catch {}
 document.documentElement.setAttribute("data-theme", savedTheme);
 
 // --- Shared Components ---

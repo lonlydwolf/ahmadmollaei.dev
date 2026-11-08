@@ -1,12 +1,25 @@
 // --- Theme Toggle ----------
+// data-theme is set before first paint by the inline script in each <head>
+// (saved choice, else prefers-color-scheme). Storage is only written on toggle.
 
 const html = document.documentElement;
 const STORAGE_KEY = "theme";
 const DARK = "dark";
 const LIGHT = "light";
 
-function applyTheme(theme) {
-  // Set data-theme on <html>
+// Match the navbar logo to the current theme
+function syncLogo() {
+  const navLogo = document.getElementById("nav-logo");
+  if (navLogo) {
+    navLogo.src =
+      html.getAttribute("data-theme") === LIGHT
+        ? "/assets/images/logo-light.png"
+        : "/assets/images/logo.png";
+  }
+}
+
+function toggleTheme() {
+  const theme = html.getAttribute("data-theme") === DARK ? LIGHT : DARK;
   html.setAttribute("data-theme", theme);
 
   // Keep Key for other pages (storage can be blocked; that must not break the page)
@@ -14,27 +27,8 @@ function applyTheme(theme) {
     localStorage.setItem(STORAGE_KEY, theme);
   } catch {}
 
-  // Swap navbar logo
-  const navLogo = document.getElementById("nav-logo");
-  if (navLogo) {
-    navLogo.src =
-      theme === DARK
-        ? "/assets/images/logo.png"
-        : "/assets/images/logo-light.png";
-  }
+  syncLogo();
 }
-
-function toggleTheme() {
-  const current = html.getAttribute("data-theme");
-  applyTheme(current === DARK ? LIGHT : DARK);
-}
-
-// Check Theme when loading page. if no Key Default DARK.
-let savedTheme = DARK;
-try {
-  savedTheme = localStorage.getItem(STORAGE_KEY) || DARK;
-} catch {}
-document.documentElement.setAttribute("data-theme", savedTheme);
 
 // --- Shared Components ---
 
@@ -64,8 +58,8 @@ async function loadChrome() {
     .getElementById("theme-toggle")
     ?.addEventListener("click", toggleTheme);
 
-  // Swap logo to match saved theme
-  applyTheme(savedTheme);
+  // Swap logo right after injection, before the first paint of the nav
+  syncLogo();
 
   // Mark the active nav link based on current page
   document

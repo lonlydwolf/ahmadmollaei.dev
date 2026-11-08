@@ -4,6 +4,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="theme-color"
+      content="#181825"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#e6e9ef"
+      media="(prefers-color-scheme: light)"
+    />
 
     <meta
       name="description"
@@ -20,11 +31,24 @@
 
     <link rel="canonical" href="https://ahmadmollaei.dev/projects/" />
 
+    <!--Theme: set before first paint to avoid a flash-->
+    <script>
+      (function () {
+        var t;
+        try {
+          t = localStorage.getItem("theme");
+        } catch (e) {}
+        if (t !== "light" && t !== "dark")
+          t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+
     <!--Google Fonts: JetBrains Mono & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400..700&display=swap"
       rel="stylesheet"
     />
     <!--Bootstrap CSS-->
@@ -51,6 +75,10 @@
   </head>
 
   <body class="d-flex flex-column min-vh-100 m-0">
+    <a class="visually-hidden-focusable skip-link" href="#main"
+      >Skip to content</a
+    >
+
     <!--Header-->
     <header id="site-header"></header>
 
@@ -58,7 +86,7 @@
     <div id="site-sidebars"></div>
 
     <!--Main-->
-    <main class="flex-grow-1">
+    <main id="main" class="flex-grow-1">
       <section class="container pt-5 pb-3 py-md-5">
         <!-- Header -->
         <div class="mb-5">
@@ -95,7 +123,7 @@
                       href="https://github.com/lonlydwolf/skills/tree/main/skills/faculty"
                       target="_blank"
                       rel="noreferrer"
-                      aria-label="GitHub"
+                      aria-label="Faculty on GitHub"
                       class="proj-link"
                     >
                       <svg
@@ -169,7 +197,7 @@
                       href="https://github.com/lonlydwolf/tapwright"
                       target="_blank"
                       rel="noreferrer"
-                      aria-label="GitHub"
+                      aria-label="tapwright on GitHub"
                       class="proj-link"
                     >
                       <svg
@@ -237,7 +265,7 @@
                       href="https://github.com/lonlydwolf/animetro"
                       target="_blank"
                       rel="noreferrer"
-                      aria-label="GitHub"
+                      aria-label="Animetro on GitHub"
                       class="proj-link"
                     >
                       <svg
@@ -316,7 +344,7 @@
                       href="https://github.com/lonlydwolf/GeminiSensei"
                       target="_blank"
                       rel="noreferrer"
-                      aria-label="GitHub"
+                      aria-label="GeminiSensei on GitHub"
                       class="proj-link"
                     >
                       <svg
@@ -393,7 +421,7 @@
                       href="https://github.com/lonlydwolf/dotfiles-maintainer"
                       target="_blank"
                       rel="noreferrer"
-                      aria-label="GitHub"
+                      aria-label="dotfiles-maintainer on GitHub"
                       class="proj-link"
                     >
                       <svg
@@ -469,7 +497,7 @@
                       href="https://github.com/lonlydwolf/CodeT5p-220m-Finetuned-For-Code-Generation"
                       target="_blank"
                       rel="noreferrer"
-                      aria-label="GitHub"
+                      aria-label="CodeT5+ Model Adaptation on GitHub"
                       class="proj-link"
                     >
                       <svg
@@ -503,7 +531,10 @@
                   target="_blank"
                   rel="noreferrer"
                   class="proj-link align-self-start text-decoration-none font-monospace small mt-2"
-                  >Technical retrospective &rarr;</a
+                  >Technical retrospective<span class="visually-hidden">
+                    (CodeT5+ Model Adaptation)</span
+                  >
+                  &rarr;</a
                 >
 
                 <!-- What I learned Badges -->
@@ -546,7 +577,7 @@
                       href="https://github.com/lonlydwolf/XOR-First-Principles-Network"
                       target="_blank"
                       rel="noreferrer"
-                      aria-label="GitHub"
+                      aria-label="XOR First-Principles Network on GitHub"
                       class="proj-link"
                     >
                       <svg
@@ -579,7 +610,10 @@
                   target="_blank"
                   rel="noreferrer"
                   class="proj-link align-self-start text-decoration-none font-monospace small mt-2"
-                  >Technical retrospective &rarr;</a
+                  >Technical retrospective<span class="visually-hidden">
+                    (XOR First-Principles Network)</span
+                  >
+                  &rarr;</a
                 >
 
                 <!-- What I learned Badges -->

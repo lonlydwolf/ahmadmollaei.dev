@@ -4,6 +4,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="theme-color"
+      content="#181825"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#e6e9ef"
+      media="(prefers-color-scheme: light)"
+    />
 
     <meta
       name="description"
@@ -20,11 +31,24 @@
 
     <link rel="canonical" href="https://ahmadmollaei.dev/experience/" />
 
+    <!--Theme: set before first paint to avoid a flash-->
+    <script>
+      (function () {
+        var t;
+        try {
+          t = localStorage.getItem("theme");
+        } catch (e) {}
+        if (t !== "light" && t !== "dark")
+          t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+
     <!--Google Fonts: JetBrains Mono & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400..700&display=swap"
       rel="stylesheet"
     />
     <!--Bootstrap CSS-->
@@ -51,6 +75,10 @@
   </head>
 
   <body class="d-flex flex-column min-vh-100 m-0">
+    <a class="visually-hidden-focusable skip-link" href="#main"
+      >Skip to content</a
+    >
+
     <!--Header-->
     <header id="site-header"></header>
 
@@ -58,7 +86,7 @@
     <div id="site-sidebars"></div>
 
     <!--Main-->
-    <main class="flex-grow-1">
+    <main id="main" class="flex-grow-1">
       <section class="container pt-5 pb-3 py-md-5">
         <!-- Heading-->
         <div class="d-flex align-items-center mb-5">
@@ -75,7 +103,6 @@
             <div
               class="nav flex-row flex-md-column nav-pills"
               role="tablist"
-              aria-orientation="vertical"
             >
               <button
                 class="nav-link active font-monospace text-start py-3 px-4 small"
@@ -139,6 +166,7 @@
                 class="tab-pane fade show active"
                 id="job-nile"
                 role="tabpanel"
+                tabindex="0"
                 aria-labelledby="job-nile-tab"
               >
                 <h3 class="fw-bold h5 exp-job-title">
@@ -172,6 +200,7 @@
                 class="tab-pane fade"
                 id="job-yonko"
                 role="tabpanel"
+                tabindex="0"
                 aria-labelledby="job-yonko-tab"
               >
                 <h3 class="fw-bold h5 exp-job-title">
@@ -205,6 +234,7 @@
                 class="tab-pane fade"
                 id="job-natureland"
                 role="tabpanel"
+                tabindex="0"
                 aria-labelledby="job-natureland-tab"
               >
                 <h3 class="fw-bold h5 exp-job-title">
@@ -234,6 +264,7 @@
                 class="tab-pane fade"
                 id="job-afrah"
                 role="tabpanel"
+                tabindex="0"
                 aria-labelledby="job-afrah-tab"
               >
                 <h3 class="fw-bold h5 exp-job-title">

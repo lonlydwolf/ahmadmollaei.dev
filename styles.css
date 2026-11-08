@@ -14,6 +14,7 @@
   --ctp-text: #cdd6f4;
   --ctp-subtext0: #a6adc8;
   --ctp-mauve: #cba6f7;
+  --ctp-comment: #7d8299; /* dim terminal comment, 4.62:1 on mantle */
 
   /* Override Bootstrap Colors */
   --bs-body-bg: var(--ctp-base);
@@ -30,16 +31,22 @@
   --sidebar-gap: 20px;
   --sidebar-display: none;
   --container-width: 100%;
+
+  /* Native UI (scrollbars, form controls) follows the site theme */
+  color-scheme: dark;
 }
 
 html[data-theme="light"] {
+  color-scheme: light;
+
   /* Colors light-Mode */
   --ctp-base: #eff1f5;
   --ctp-mantle: #e6e9ef;
   --ctp-surface0: #ccd0da;
   --ctp-text: #4c4f69;
-  --ctp-subtext0: #6c6f85;
-  --ctp-mauve: #8839ef;
+  --ctp-subtext0: #5c5f77;
+  --ctp-mauve: #8737ef; /* Latte mauve #8839ef nudged darker to reach 4.5:1 on mantle */
+  --ctp-comment: #63667d; /* dim terminal comment, 4.63:1 on mantle */
 }
 
 html {
@@ -54,6 +61,20 @@ body {
 
 main {
   padding-top: var(--navbar-height);
+}
+
+/* Skip link: shown on focus, above the fixed navbar */
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1100;
+  padding: 0.5rem 1rem;
+  background-color: var(--ctp-mantle);
+  color: var(--ctp-mauve);
+  border: 1px solid var(--ctp-mauve);
+  border-radius: 4px;
+  font-family: var(--font-mono);
 }
 
 /* Header*/
@@ -392,7 +413,7 @@ html[data-theme="light"] #icon-moon {
 
 .about-bio-border strong {
   color: var(--ctp-text);
-  font-weight: 600;
+  font-weight: 700; /* Inter 600 isn't loaded; 600 already rendered as 700 */
 }
 
 .about-card {
@@ -422,12 +443,6 @@ html[data-theme="light"] #icon-moon {
   border-radius: 4px;
   background-color: var(--ctp-surface0);
   border: 1px solid var(--ctp-surface0);
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
-}
-
-.about-card .badge:hover {
-  opacity: 1;
 }
 
 .icon-badge {
@@ -447,6 +462,11 @@ html[data-theme="light"] #icon-moon {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--ctp-subtext0);
+}
+
+/* subtext0 on surface0 is only 4.05:1 in light mode */
+html[data-theme="light"] .text-badge {
+  color: var(--ctp-text);
 }
 
 .about-learning-section {
@@ -631,23 +651,49 @@ html[data-theme="light"] #icon-moon {
   background-color: var(--ctp-mantle);
   border: 1px solid var(--ctp-surface0);
   border-radius: 8px;
-  min-width: 320px;
+  min-width: min(320px, 100%);
 }
 
 .not-found-comment {
-  color: var(--ctp-subtext0);
-  opacity: 0.5;
+  color: var(--ctp-comment);
+  font-style: italic;
 }
 
+/* ms-1 + 4px padding keeps the text where ms-2 put it */
 .not-found-cmd {
   color: var(--ctp-mauve);
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  padding: 1px 4px;
+  border-radius: 2px;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
 }
 
-.not-found-cmd:hover {
-  opacity: 0.7;
+/* Hover/focus looks like a terminal selection (mantle on mauve: 4.52:1
+   light, 8.64:1 dark). The highlight is the focus indicator, hence no outline. */
+.not-found-cmd:hover,
+.not-found-cmd:focus-visible {
+  background-color: var(--ctp-mauve);
+  color: var(--ctp-mantle);
   text-decoration: none;
+  outline: none;
+}
+
+.not-found-cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.1em;
+  vertical-align: text-bottom;
+  background: var(--ctp-mauve);
+  margin-left: 4px;
+  animation: blink 1.1s steps(1) 4; /* stops after ~4.4s, solid (WCAG 2.2.2) */
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 /* FOOTER */
@@ -707,4 +753,21 @@ html[data-theme="light"] .btn-close {
 .tooltip {
   --bs-tooltip-bg: var(--ctp-surface0);
   --bs-tooltip-color: var(--ctp-text);
+}
+
+/* Reduced motion: keep the colour changes, drop the hover movement and the
+   blinking cursor (it stays visible, just static) */
+@media (prefers-reduced-motion: reduce) {
+  .not-found-cursor {
+    animation: none;
+  }
+
+  .navbar-logo:hover,
+  .social-list a:hover,
+  .email-wrapper a:hover,
+  .proj-card:hover,
+  .proj-link:hover,
+  .footer-social-link:hover {
+    transform: none;
+  }
 }

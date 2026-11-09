@@ -24,7 +24,7 @@
   --bs-link-color: var(--ctp-mauve);
   --bs-link-hover-color: var(--ctp-mauve);
 
-  --navbar-height: 66px;
+  --navbar-height: 69px;
 
   /* Sidebar Variables */
   --sidebar-width: 40px;
@@ -403,7 +403,7 @@ html[data-theme="light"] #icon-moon {
 }
 
 .about-bio-border {
-  border-left: 2px solid var(--ctp-surface0) !important;
+  border-left: 2px solid var(--ctp-surface0);
 }
 
 .about-bio-border p {
@@ -514,6 +514,33 @@ html[data-theme="light"] .text-badge {
   border-left: 2px solid var(--ctp-mauve);
 }
 
+/* Below md the tabs are one horizontal scroll strip with a bottom indicator */
+@media (max-width: 767.98px) {
+  .nav-pills {
+    overflow-x: auto;
+  }
+
+  .nav-pills .nav-link,
+  .nav-pills .nav-link.active {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    border-left: 0;
+    border-bottom: 2px solid var(--ctp-surface0);
+  }
+
+  .nav-pills .nav-link:hover,
+  .nav-pills .nav-link.active {
+    border-bottom-color: var(--ctp-mauve);
+  }
+
+  /* Bootstrap's outer focus shadow would be clipped by the scroll box */
+  .nav-pills .nav-link:focus-visible {
+    box-shadow: none;
+    outline: 2px solid var(--ctp-mauve);
+    outline-offset: -2px;
+  }
+}
+
 .exp-job-title {
   color: var(--ctp-text);
 }
@@ -566,14 +593,6 @@ html[data-theme="light"] .text-badge {
   background-color: transparent;
   border: 1px solid var(--ctp-surface0);
   color: var(--ctp-subtext0);
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease;
-}
-
-.proj-badge:hover {
-  border-color: var(--ctp-mauve);
-  color: var(--ctp-mauve);
 }
 
 .proj-card {

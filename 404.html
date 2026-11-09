@@ -5,16 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark light" />
-    <meta
-      name="theme-color"
-      content="#181825"
-      media="(prefers-color-scheme: dark)"
-    />
-    <meta
-      name="theme-color"
-      content="#e6e9ef"
-      media="(prefers-color-scheme: light)"
-    />
+    <meta name="theme-color" content="#181825" />
 
     <!--Theme: set before first paint to avoid a flash-->
     <script>
@@ -30,6 +21,9 @@
         if (t !== "light" && t !== "dark")
           t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
         document.documentElement.setAttribute("data-theme", t);
+        document
+          .querySelector('meta[name="theme-color"]')
+          .setAttribute("content", t === "light" ? "#e6e9ef" : "#181825");
       })();
     </script>
 
@@ -40,6 +34,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400..700&display=swap"
       rel="stylesheet"
     />
+    <!--Preload shared partials (crossorigin matches fetch()'s default cors mode)-->
+    <link rel="preload" href="/_includes/_nav.html" as="fetch" crossorigin />
+    <link rel="preload" href="/_includes/_sidebars.html" as="fetch" crossorigin />
+    <link rel="preload" href="/_includes/_footer-modal.html" as="fetch" crossorigin />
     <!--Bootstrap CSS-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -69,7 +67,17 @@
     >
 
     <!--Header-->
-    <header id="site-header"></header>
+    <header id="site-header">
+      <!--Without JS the navbar partial never loads; keep the site navigable-->
+      <noscript>
+        <nav class="container d-flex flex-wrap gap-4 py-3 font-monospace" aria-label="Main">
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="/experience/">Experience</a>
+          <a href="/projects/">Projects</a>
+        </nav>
+      </noscript>
+    </header>
 
     <!--Fixed SideBars-->
     <div id="site-sidebars"></div>

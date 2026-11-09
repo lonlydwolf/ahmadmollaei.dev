@@ -5,16 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark light" />
-    <meta
-      name="theme-color"
-      content="#181825"
-      media="(prefers-color-scheme: dark)"
-    />
-    <meta
-      name="theme-color"
-      content="#e6e9ef"
-      media="(prefers-color-scheme: light)"
-    />
+    <meta name="theme-color" content="#181825" />
 
     <!--Theme: set before first paint to avoid a flash-->
     <script>
@@ -30,6 +21,9 @@
         if (t !== "light" && t !== "dark")
           t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
         document.documentElement.setAttribute("data-theme", t);
+        document
+          .querySelector('meta[name="theme-color"]')
+          .setAttribute("content", t === "light" ? "#e6e9ef" : "#181825");
       })();
     </script>
 

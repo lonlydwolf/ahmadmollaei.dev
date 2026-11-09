@@ -1,7 +1,8 @@
 // --- Theme Toggle ----------
 // data-theme is set before first paint by the inline script in each <head>
 // (saved choice, else prefers-color-scheme). Storage is only written on toggle.
-// Keep STORAGE_KEY/DARK/LIGHT in sync with those five inline copies.
+// Keep STORAGE_KEY/DARK/LIGHT and the theme-color hex values in sync with
+// those five inline copies.
 
 const html = document.documentElement;
 const STORAGE_KEY = "theme";
@@ -28,6 +29,9 @@ function syncThemeUI() {
 function toggleTheme() {
   const theme = html.getAttribute("data-theme") === DARK ? LIGHT : DARK;
   html.setAttribute("data-theme", theme);
+  document
+    .querySelector('meta[name="theme-color"]')
+    ?.setAttribute("content", theme === DARK ? "#181825" : "#e6e9ef");
 
   // Keep Key for other pages (storage can be blocked; that must not break the page)
   try {

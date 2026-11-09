@@ -593,14 +593,6 @@ html[data-theme="light"] .text-badge {
   background-color: transparent;
   border: 1px solid var(--ctp-surface0);
   color: var(--ctp-subtext0);
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease;
-}
-
-.proj-badge:hover {
-  border-color: var(--ctp-mauve);
-  color: var(--ctp-mauve);
 }
 
 .proj-card {

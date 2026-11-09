@@ -403,7 +403,7 @@ html[data-theme="light"] #icon-moon {
 }
 
 .about-bio-border {
-  border-left: 2px solid var(--ctp-surface0) !important;
+  border-left: 2px solid var(--ctp-surface0);
 }
 
 .about-bio-border p {

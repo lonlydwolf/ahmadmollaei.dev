@@ -105,7 +105,6 @@ function initTooltips() {
   );
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  initTooltips();
-  loadChrome();
-});
+// Loaded with defer, so the DOM is already parsed here
+initTooltips();
+loadChrome();
